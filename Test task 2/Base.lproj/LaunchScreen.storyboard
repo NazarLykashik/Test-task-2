@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,13 +15,62 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchRound" translatesAutoresizingMaskIntoConstraints="NO" id="nQL-Pg-0aJ">
+                                <rect key="frame" x="77.5" y="223" width="220" height="221"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="cTg-0o-AD3">
+                                <rect key="frame" x="167" y="306" width="156" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Encommerce" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2e-xg-1UN">
+                                        <rect key="frame" x="0.0" y="0.0" width="156" height="35"/>
+                                        <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="25"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Concept" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q6G-5g-kcv">
+                                        <rect key="frame" x="0.0" y="35" width="101.5" height="35"/>
+                                        <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="25"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="1J5-y4-b6P"/>
+                                    <constraint firstItem="q6G-5g-kcv" firstAttribute="leading" secondItem="cTg-0o-AD3" secondAttribute="leading" id="1Ql-14-6vb"/>
+                                    <constraint firstItem="E2e-xg-1UN" firstAttribute="leading" secondItem="cTg-0o-AD3" secondAttribute="leading" id="BGA-W2-M6y"/>
+                                    <constraint firstAttribute="trailing" secondItem="q6G-5g-kcv" secondAttribute="trailing" constant="54.5" id="COL-Xq-SWC"/>
+                                    <constraint firstItem="E2e-xg-1UN" firstAttribute="top" secondItem="cTg-0o-AD3" secondAttribute="top" id="CUY-TJ-YKx"/>
+                                    <constraint firstAttribute="bottom" secondItem="q6G-5g-kcv" secondAttribute="bottom" id="Tjf-Ph-TLd"/>
+                                    <constraint firstAttribute="width" secondItem="cTg-0o-AD3" secondAttribute="height" multiplier="78:35" id="UN2-0d-8Z8"/>
+                                    <constraint firstItem="q6G-5g-kcv" firstAttribute="top" secondItem="E2e-xg-1UN" secondAttribute="bottom" id="hGB-9U-1rC"/>
+                                    <constraint firstAttribute="trailing" secondItem="E2e-xg-1UN" secondAttribute="trailing" id="hPq-aM-hcK"/>
+                                    <constraint firstAttribute="width" constant="156" id="peI-kb-2fA"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.0057528293689999999" green="0.0" blue="0.20772963759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cTg-0o-AD3" firstAttribute="top" secondItem="nQL-Pg-0aJ" secondAttribute="bottom" constant="-138" id="0Mu-zJ-0CU"/>
+                            <constraint firstItem="nQL-Pg-0aJ" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.331334" id="IW7-sG-0eF"/>
+                            <constraint firstItem="nQL-Pg-0aJ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="QYn-cM-u5x"/>
+                            <constraint firstItem="cTg-0o-AD3" firstAttribute="height" secondItem="nQL-Pg-0aJ" secondAttribute="height" multiplier="0.316742" id="TdN-Fk-sY6"/>
+                            <constraint firstItem="nQL-Pg-0aJ" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.586667" id="Y39-X4-9Gm"/>
+                            <constraint firstItem="cTg-0o-AD3" firstAttribute="width" secondItem="nQL-Pg-0aJ" secondAttribute="width" multiplier="0.709091" id="a6r-p3-92B"/>
+                            <constraint firstItem="nQL-Pg-0aJ" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="nDg-fw-X4c"/>
+                            <constraint firstItem="cTg-0o-AD3" firstAttribute="leading" secondItem="nQL-Pg-0aJ" secondAttribute="trailing" constant="-130.5" id="zfJ-ot-Ifw"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="LaunchRound" width="539" height="463"/>
+    </resources>
 </document>

@@ -63,8 +63,8 @@
 				C2FC8B01295C73250040E4A5 /* MainScreenController.swift */,
 				C2FC8B13295C7B170040E4A5 /* Model.swift */,
 				C2FC8B03295C73250040E4A5 /* Main.storyboard */,
-				C2FC8B06295C73270040E4A5 /* Assets.xcassets */,
 				C2FC8B08295C73270040E4A5 /* LaunchScreen.storyboard */,
+				C2FC8B06295C73270040E4A5 /* Assets.xcassets */,
 				C2FC8B0B295C73270040E4A5 /* Info.plist */,
 			);
 			path = "Test task 2";
