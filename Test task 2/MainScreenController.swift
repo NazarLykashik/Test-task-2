@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainScreenViewController: UIViewController {
     
     private var homeStore: [HomeStore] = []
     private var bestSeller: [BestSeller] = []
