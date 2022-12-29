@@ -9,6 +9,9 @@ import UIKit
 
 class MainScreenViewController: UIViewController {
     
+    @IBOutlet var LabelOfCategory: UILabel!
+    private var galleryColectionView = GalleryCollectionView()
+    
     private var homeStore: [HomeStore] = []
     private var bestSeller: [BestSeller] = []
     
@@ -17,6 +20,15 @@ class MainScreenViewController: UIViewController {
     override func viewDidLoad() {
         fechData()
         super.viewDidLoad()
+        
+        view.addSubview(galleryColectionView)
+        
+        galleryColectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        galleryColectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        galleryColectionView.topAnchor.constraint(equalTo: LabelOfCategory.bottomAnchor, constant: 5).isActive = true
+        galleryColectionView.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        
+        galleryColectionView.set(cells: GalleryModel.fetchModel())
         
     }
     func fechData(){

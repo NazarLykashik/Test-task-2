@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C28AF28F295DC68F006429FB /* GalleryColectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28AF28E295DC68F006429FB /* GalleryColectionView.swift */; };
+		C28AF291295DDBCF006429FB /* GalleryColectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28AF290295DDBCF006429FB /* GalleryColectionViewCell.swift */; };
 		C2FC8AFE295C73250040E4A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FC8AFD295C73250040E4A5 /* AppDelegate.swift */; };
 		C2FC8B00295C73250040E4A5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FC8AFF295C73250040E4A5 /* SceneDelegate.swift */; };
 		C2FC8B02295C73250040E4A5 /* MainScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FC8B01295C73250040E4A5 /* MainScreenController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C28AF28E295DC68F006429FB /* GalleryColectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryColectionView.swift; sourceTree = "<group>"; };
+		C28AF290295DDBCF006429FB /* GalleryColectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryColectionViewCell.swift; sourceTree = "<group>"; };
 		C2FC8AFA295C73250040E4A5 /* Test task 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Test task 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2FC8AFD295C73250040E4A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2FC8AFF295C73250040E4A5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +65,8 @@
 				C2FC8AFD295C73250040E4A5 /* AppDelegate.swift */,
 				C2FC8AFF295C73250040E4A5 /* SceneDelegate.swift */,
 				C2FC8B01295C73250040E4A5 /* MainScreenController.swift */,
+				C28AF28E295DC68F006429FB /* GalleryColectionView.swift */,
+				C28AF290295DDBCF006429FB /* GalleryColectionViewCell.swift */,
 				C2FC8B13295C7B170040E4A5 /* Model.swift */,
 				C2FC8B03295C73250040E4A5 /* Main.storyboard */,
 				C2FC8B08295C73270040E4A5 /* LaunchScreen.storyboard */,
@@ -142,7 +148,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2FC8B14295C7B170040E4A5 /* Model.swift in Sources */,
+				C28AF291295DDBCF006429FB /* GalleryColectionViewCell.swift in Sources */,
 				C2FC8B02295C73250040E4A5 /* MainScreenController.swift in Sources */,
+				C28AF28F295DC68F006429FB /* GalleryColectionView.swift in Sources */,
 				C2FC8AFE295C73250040E4A5 /* AppDelegate.swift in Sources */,
 				C2FC8B00295C73250040E4A5 /* SceneDelegate.swift in Sources */,
 			);

@@ -30,3 +30,26 @@ struct JSONResponce: Decodable{
     let home_store: [HomeStore]?
     let best_seller: [BestSeller]?
 }
+struct GalleryModel{
+    var mainImage: UIImage
+    var itemName: String
+    
+    static func fetchModel() -> [GalleryModel] {
+        let firstItem = GalleryModel(mainImage: UIImage(named: "PhoneInBar")!,
+                                     itemName: "Phones")
+        let secondItem = GalleryModel(mainImage: UIImage(named: "ComputerInBar")!,
+                                      itemName: "Computer")
+        let thirdItem = GalleryModel(mainImage: UIImage(named: "HeartInBar")!,
+                                     itemName: "Health")
+        let fouthItem = GalleryModel(mainImage: UIImage(named: "BooksInBar")!,
+                                     itemName: "Books")
+        let fiveItem = GalleryModel(mainImage: UIImage(named: "ComputerInBar")!,
+                                      itemName: "Computer")
+        let sixItem = GalleryModel(mainImage: UIImage(named: "HeartInBar")!,
+                                     itemName: "Health")
+        let sevenItem = GalleryModel(mainImage: UIImage(named: "BooksInBar")!,
+                                     itemName: "Books")
+        return [firstItem, secondItem, thirdItem, fouthItem, fiveItem, sixItem, sevenItem]
+    }
+}
+
