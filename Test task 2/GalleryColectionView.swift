@@ -17,11 +17,16 @@ class GalleryCollectionView: UICollectionView, UICollectionViewDelegate, UIColle
         layout.scrollDirection = .horizontal
         super.init(frame: .zero, collectionViewLayout: layout)
         
-        backgroundColor = .orange
+        backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.9372549057, blue: 0.9372549057, alpha: 1)
         delegate = self
         dataSource = self
         register(GalleryCollectionViewCell.self, forCellWithReuseIdentifier: GalleryCollectionViewCell.reuseId)
         translatesAutoresizingMaskIntoConstraints = false
+        layout.minimumLineSpacing = Constants.galleryMinimumLineSpacing
+        contentInset = UIEdgeInsets(top: 0, left: Constants.leftDistanceToView, bottom: 0, right: Constants.rightDistanceToView)
+        
+        showsVerticalScrollIndicator = false
+        showsHorizontalScrollIndicator = false
     }
     
     func set(cells: [GalleryModel]){
@@ -35,6 +40,7 @@ class GalleryCollectionView: UICollectionView, UICollectionViewDelegate, UIColle
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: GalleryCollectionViewCell.reuseId, for: indexPath) as! GalleryCollectionViewCell
         cell.mainImageView.image = cells[indexPath.row].mainImage
+        cell.nameLabel.text = cells[indexPath.row].itemName
         return cell
     }
     
