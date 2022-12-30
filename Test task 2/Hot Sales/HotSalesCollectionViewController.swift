@@ -38,7 +38,8 @@ class HotSalesCollectionView: UICollectionView, UICollectionViewDelegate, UIColl
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: HotSalesCollectionViewCell.reuseId, for: indexPath) as! HotSalesCollectionViewCell
-        cell.picture.image = cellsHotSales[indexPath.row].picture
+//        cell.picture.image = cellsHotSales[indexPath.row].picture
+        cell.picture.image = 
         cell.nameTitle.text = cellsHotSales[indexPath.row].title
         return cell
     }

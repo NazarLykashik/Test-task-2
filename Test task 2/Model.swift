@@ -7,24 +7,26 @@
 
 import UIKit
 
-struct HomeStore{
-    let id: Int
-    let is_new: Bool
-    let title: String
-    let subtitle: String
-    let picture: UIImage
-    let is_buy: Bool
+struct HomeStore: Decodable, Encodable{
+    let id: Int?
+    let is_new: Bool?
+    let title: String?
+    let subtitle: String?
+    let picture: String?
+    let is_buy: Bool?
     
-    static func fetchHomeStore() -> [HomeStore]{
-        let firstItem = HomeStore(id: 1, is_new: true, title: "Iphone 12", subtitle: "df", picture: UIImage(named: "PhoneInBar")!, is_buy: true)
-        
-        let secondItem = HomeStore(id: 2, is_new: true, title: "Iphone 12", subtitle: "df", picture: UIImage(named: "PhoneInBar")!, is_buy: true)
-        
-        let thirdItem = HomeStore(id: 3, is_new: true, title: "Iphone 12", subtitle: "df", picture: UIImage(named: "PhoneInBar")!, is_buy: true)
-        
-        let fouthItem = HomeStore(id: 4, is_new: true, title: "Iphone 12", subtitle: "df", picture: UIImage(named: "PhoneInBar")!, is_buy: true)
-        
-        return [firstItem, secondItem, thirdItem, fouthItem]
+    init(dictHomeStore: [String: Any]){
+        id = dictHomeStore["id"] as? Int
+        is_new = dictHomeStore["is_new"] as? Bool
+        title = dictHomeStore["title"] as? String
+        subtitle = dictHomeStore["subtitle"] as? String
+        picture = dictHomeStore["picture"] as? String
+        is_buy = dictHomeStore["is_buy"] as? Bool
+    }
+    
+    static func getHomeStore(from jsonData: Any) -> [HomeStore]{
+        guard let jsonData = jsonData as? Array <[String: Any]> else {return []}
+        return jsonData.compactMap{ HomeStore(dictHomeStore: $0) }
     }
 }
 struct ConstantsHomeStore{
@@ -45,10 +47,10 @@ struct BestSeller: Decodable{
     let picture: String?
 }
 
-//struct JSONResponce: Decodable{
-//    let home_store: [HomeStore]?
-//    let best_seller: [BestSeller]?
-//}
+struct JSONResponce: Decodable{
+    let home_store: [HomeStore]?
+    let best_seller: [BestSeller]?
+}
 
 // MARK: - Select Category
 struct SelectCategoryModel{
