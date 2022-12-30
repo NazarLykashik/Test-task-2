@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C28AF28F295DC68F006429FB /* SelectCategoryColectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28AF28E295DC68F006429FB /* SelectCategoryColectionView.swift */; };
 		C28AF291295DDBCF006429FB /* SelectCategoryColectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28AF290295DDBCF006429FB /* SelectCategoryColectionViewCell.swift */; };
+		C28AF294295E6671006429FB /* HotSalesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28AF293295E6671006429FB /* HotSalesCollectionViewController.swift */; };
+		C28AF296295E684B006429FB /* HotSalesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28AF295295E684B006429FB /* HotSalesCollectionViewCell.swift */; };
 		C2FC8AFE295C73250040E4A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FC8AFD295C73250040E4A5 /* AppDelegate.swift */; };
 		C2FC8B00295C73250040E4A5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FC8AFF295C73250040E4A5 /* SceneDelegate.swift */; };
 		C2FC8B02295C73250040E4A5 /* MainScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FC8B01295C73250040E4A5 /* MainScreenController.swift */; };
@@ -21,6 +23,8 @@
 /* Begin PBXFileReference section */
 		C28AF28E295DC68F006429FB /* SelectCategoryColectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryColectionView.swift; sourceTree = "<group>"; };
 		C28AF290295DDBCF006429FB /* SelectCategoryColectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryColectionViewCell.swift; sourceTree = "<group>"; };
+		C28AF293295E6671006429FB /* HotSalesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSalesCollectionViewController.swift; sourceTree = "<group>"; };
+		C28AF295295E684B006429FB /* HotSalesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSalesCollectionViewCell.swift; sourceTree = "<group>"; };
 		C2FC8AFA295C73250040E4A5 /* Test task 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Test task 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2FC8AFD295C73250040E4A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2FC8AFF295C73250040E4A5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +78,8 @@
 				C2FC8AFD295C73250040E4A5 /* AppDelegate.swift */,
 				C2FC8AFF295C73250040E4A5 /* SceneDelegate.swift */,
 				C2FC8B01295C73250040E4A5 /* MainScreenController.swift */,
+				C28AF293295E6671006429FB /* HotSalesCollectionViewController.swift */,
+				C28AF295295E684B006429FB /* HotSalesCollectionViewCell.swift */,
 				C28AF292295E659F006429FB /* Select Category */,
 				C2FC8B13295C7B170040E4A5 /* Model.swift */,
 				C2FC8B03295C73250040E4A5 /* Main.storyboard */,
@@ -157,10 +163,12 @@
 			files = (
 				C2FC8B14295C7B170040E4A5 /* Model.swift in Sources */,
 				C28AF291295DDBCF006429FB /* SelectCategoryColectionViewCell.swift in Sources */,
+				C28AF296295E684B006429FB /* HotSalesCollectionViewCell.swift in Sources */,
 				C2FC8B02295C73250040E4A5 /* MainScreenController.swift in Sources */,
 				C28AF28F295DC68F006429FB /* SelectCategoryColectionView.swift in Sources */,
 				C2FC8AFE295C73250040E4A5 /* AppDelegate.swift in Sources */,
 				C2FC8B00295C73250040E4A5 /* SceneDelegate.swift in Sources */,
+				C28AF294295E6671006429FB /* HotSalesCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

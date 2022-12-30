@@ -11,6 +11,7 @@ class MainScreenViewController: UIViewController {
     
     @IBOutlet var LabelOfCategory: UILabel!
     private var SelectCategoryColectionView = SelectCategoryCollectionView()
+    private var HotSalesColectionView = HotSalesCollectionView()
     
     private var homeStore: [HomeStore] = []
     private var bestSeller: [BestSeller] = []
@@ -37,8 +38,6 @@ class MainScreenViewController: UIViewController {
             guard let data = data else {return}
             do{
                 let phones = try JSONDecoder().decode(JSONResponce.self, from: data)
-                print(phones.best_seller ?? [])
-                print(phones.home_store ?? [])
             }
             catch let error{
                 print(error)
