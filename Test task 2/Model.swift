@@ -7,26 +7,33 @@
 
 import UIKit
 
-struct HomeStore: Decodable{
-    let id: Int?
-    let is_new: Bool?
-    let title: String?
-    let subtitle: String?
-    let picture: String?
-    let is_buy: Bool?
+struct HomeStore{
+    let id: Int
+    let is_new: Bool
+    let title: String
+    let subtitle: String
+    let picture: UIImage
+    let is_buy: Bool
     
     static func fetchHomeStore() -> [HomeStore]{
-        let firstItem = HomeStore(id: 1, is_new: true, title: "Iphone 12", subtitle: "df", picture: "Phones", is_buy: true)
+        let firstItem = HomeStore(id: 1, is_new: true, title: "Iphone 12", subtitle: "df", picture: UIImage(named: "PhoneInBar")!, is_buy: true)
         
-        let secondItem = HomeStore(id: 2, is_new: true, title: "Iphone 12", subtitle: "df", picture: "Phones", is_buy: true)
+        let secondItem = HomeStore(id: 2, is_new: true, title: "Iphone 12", subtitle: "df", picture: UIImage(named: "PhoneInBar")!, is_buy: true)
         
-        let thirdItem = HomeStore(id: 3, is_new: true, title: "Iphone 12", subtitle: "df", picture: "Phones", is_buy: true)
+        let thirdItem = HomeStore(id: 3, is_new: true, title: "Iphone 12", subtitle: "df", picture: UIImage(named: "PhoneInBar")!, is_buy: true)
         
-        let fouthItem = HomeStore(id: 4, is_new: true, title: "Iphone 12", subtitle: "df", picture: "Phones", is_buy: true)
+        let fouthItem = HomeStore(id: 4, is_new: true, title: "Iphone 12", subtitle: "df", picture: UIImage(named: "PhoneInBar")!, is_buy: true)
         
         return [firstItem, secondItem, thirdItem, fouthItem]
     }
+}
+struct ConstantsHomeStore{
+    static let leftDistanceToView: CGFloat = 0
+    static let rightDistanceToView: CGFloat = 0
+    static let galleryMinimumLineSpacing: CGFloat = 0
+    static let galleryItemWidth = 200
     
+    //(UIScreen.main.bounds.width - Constants.leftDistanceToView - Constants.rightDistanceToView - (Constants.galleryMinimumLineSpacing / 2 )) / 2
 }
 
 struct BestSeller: Decodable{
@@ -38,10 +45,10 @@ struct BestSeller: Decodable{
     let picture: String?
 }
 
-struct JSONResponce: Decodable{
-    let home_store: [HomeStore]?
-    let best_seller: [BestSeller]?
-}
+//struct JSONResponce: Decodable{
+//    let home_store: [HomeStore]?
+//    let best_seller: [BestSeller]?
+//}
 
 // MARK: - Select Category
 struct SelectCategoryModel{

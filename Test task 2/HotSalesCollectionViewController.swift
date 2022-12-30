@@ -18,13 +18,13 @@ class HotSalesCollectionView: UICollectionView, UICollectionViewDelegate, UIColl
         layout.scrollDirection = .horizontal
         super.init(frame: .zero, collectionViewLayout: layout)
         
-        backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.9372549057, blue: 0.9372549057, alpha: 1)
+        backgroundColor = #colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1)
         delegate = self
         dataSource = self
         register(HotSalesCollectionViewCell.self, forCellWithReuseIdentifier: HotSalesCollectionViewCell.reuseId)
         translatesAutoresizingMaskIntoConstraints = false
-        layout.minimumLineSpacing = Constants.galleryMinimumLineSpacing
-        contentInset = UIEdgeInsets(top: 0, left: Constants.leftDistanceToView, bottom: 0, right: Constants.rightDistanceToView)
+        layout.minimumLineSpacing = ConstantsHomeStore.galleryMinimumLineSpacing
+        contentInset = UIEdgeInsets(top: 0, left: ConstantsHomeStore.leftDistanceToView, bottom: 0, right: ConstantsHomeStore.rightDistanceToView)
         
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
@@ -38,12 +38,12 @@ class HotSalesCollectionView: UICollectionView, UICollectionViewDelegate, UIColl
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: HotSalesCollectionViewCell.reuseId, for: indexPath) as! HotSalesCollectionViewCell
-        //cell.mainImageView.image = cellsHotSales[indexPath.row].mainImage
-        //cell.nameLabel.text = cellsHotSales[indexPath.row].itemName
+        cell.picture.image = cellsHotSales[indexPath.row].picture
+        cell.nameTitle.text = cellsHotSales[indexPath.row].title
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 80, height: 80)
+        return CGSize(width: 400, height: 180)
     }
     
     required init?(coder: NSCoder) {
