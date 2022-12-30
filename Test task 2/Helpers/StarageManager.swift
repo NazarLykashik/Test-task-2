@@ -7,6 +7,8 @@
 
 import Foundation
 
+private var homeStore: [HomeStore] = []
+
 class StorageManager{
     static let shared = StorageManager()
     

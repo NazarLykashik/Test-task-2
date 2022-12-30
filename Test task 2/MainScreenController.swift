@@ -15,14 +15,16 @@ class MainScreenViewController: UIViewController {
     private var SelectCategoryColectionView = SelectCategoryCollectionView()
     private var HotSalesColectionView = HotSalesCollectionView()
     
+    private var bothPages: [JSONResponce] = []
     private var homeStore: [HomeStore] = []
     private var bestSeller: [BestSeller] = []
     
     private let jsonUrl = "https://run.mocky.io/v3/654bd15e-b121-49ba-a588-960956b15175"
 
     override func viewDidLoad() {
-        fechData()
         super.viewDidLoad()
+        fechData()
+        homeStore = StorageManager.shared.getHomeStore()
         
         view.addSubview(SelectCategoryColectionView)
         
@@ -44,13 +46,27 @@ class MainScreenViewController: UIViewController {
         
         //HotSalesColectionView.set(cellsHotSales: HomeStore.fetchHomeStore())
         
+        
     }
+    
+//    private func fetchImage(){
+//        guard let url = URL(string: picture) else {return}
+//    }
+    
     func fechData(){
         guard let url = URL(string: jsonUrl) else {return}
         URLSession.shared.dataTask(with: url) { (data, _, _) in
             guard let data = data else {return}
             do{
                 let phones = try JSONDecoder().decode(JSONResponce.self, from: data)
+                self.homeStore = phones.home_store ?? []
+                self.bestSeller = phones.best_seller ?? []
+                StorageManager.shared.saveHomeStore(self.homeStore)
+                print(self.homeStore)
+                
+                DispatchQueue.main.async {
+                    self.HotSalesColectionView.reloadData()
+                }
             }
             catch let error{
                 print(error)

@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct HomeStore: Decodable, Encodable{
+struct HomeStore: Codable{
     let id: Int?
     let is_new: Bool?
     let title: String?
@@ -15,19 +15,19 @@ struct HomeStore: Decodable, Encodable{
     let picture: String?
     let is_buy: Bool?
     
-    init(dictHomeStore: [String: Any]){
-        id = dictHomeStore["id"] as? Int
-        is_new = dictHomeStore["is_new"] as? Bool
-        title = dictHomeStore["title"] as? String
-        subtitle = dictHomeStore["subtitle"] as? String
-        picture = dictHomeStore["picture"] as? String
-        is_buy = dictHomeStore["is_buy"] as? Bool
-    }
+//    init(dictHomeStore: [String: Any]){
+//        id = dictHomeStore["id"] as? Int
+//        is_new = dictHomeStore["is_new"] as? Bool
+//        title = dictHomeStore["title"] as? String
+//        subtitle = dictHomeStore["subtitle"] as? String
+//        picture = dictHomeStore["picture"] as? String
+//        is_buy = dictHomeStore["is_buy"] as? Bool
+//    }
     
-    static func getHomeStore(from jsonData: Any) -> [HomeStore]{
-        guard let jsonData = jsonData as? Array <[String: Any]> else {return []}
-        return jsonData.compactMap{ HomeStore(dictHomeStore: $0) }
-    }
+//    static func getHomeStore(from jsonData: Any) -> [HomeStore]{
+//        guard let jsonData = jsonData as? Array <[String: Any]> else {return []}
+//        return jsonData.compactMap{ HomeStore(dictHomeStore: $0) }
+//    }
 }
 struct ConstantsHomeStore{
     static let leftDistanceToView: CGFloat = 0

@@ -11,7 +11,8 @@ private let reuseIdentifier = "HotSalesCell"
 
 class HotSalesCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    var cellsHotSales: [HomeStore] = []
+    var cellsHotSales = StorageManager.shared.getHomeStore()
+
     
     init(){
         let layout = UICollectionViewFlowLayout()
@@ -38,9 +39,10 @@ class HotSalesCollectionView: UICollectionView, UICollectionViewDelegate, UIColl
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: HotSalesCollectionViewCell.reuseId, for: indexPath) as! HotSalesCollectionViewCell
-//        cell.picture.image = cellsHotSales[indexPath.row].picture
-        cell.picture.image = 
+
+        //cell.picture.image = cellsHotSales[indexPath.row].picture
         cell.nameTitle.text = cellsHotSales[indexPath.row].title
+        
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
