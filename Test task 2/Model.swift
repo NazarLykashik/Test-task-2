@@ -30,6 +30,8 @@ struct JSONResponce: Decodable{
     let home_store: [HomeStore]?
     let best_seller: [BestSeller]?
 }
+
+// MARK: - Select Category
 struct GalleryModel{
     var mainImage: UIImage
     var itemName: String
@@ -55,6 +57,6 @@ struct GalleryModel{
 struct Constants{
     static let leftDistanceToView: CGFloat = 8
     static let rightDistanceToView: CGFloat = 8
-    static let galleryMinimumLineSpacing: CGFloat = 10
+    static let galleryMinimumLineSpacing: CGFloat = 5
     static let galleryItemWidth = (UIScreen.main.bounds.width - Constants.leftDistanceToView - Constants.rightDistanceToView - (Constants.galleryMinimumLineSpacing / 2 )) / 2
 }
