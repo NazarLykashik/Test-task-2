@@ -37,7 +37,7 @@ class HotSalesCollectionView: UICollectionView, UICollectionViewDelegate, UIColl
         return cellsHotSales.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = dequeueReusableCell(withReuseIdentifier: HotSalesCollectionViewCell.reuseId, for: indexPath) as! SelectCategoryCollectionViewCell
+        let cell = dequeueReusableCell(withReuseIdentifier: HotSalesCollectionViewCell.reuseId, for: indexPath) as! HotSalesCollectionViewCell
         //cell.mainImageView.image = cellsHotSales[indexPath.row].mainImage
         //cell.nameLabel.text = cellsHotSales[indexPath.row].itemName
         return cell

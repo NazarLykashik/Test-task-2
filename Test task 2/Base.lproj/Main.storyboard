@@ -113,6 +113,7 @@
                     </view>
                     <connections>
                         <outlet property="LabelOfCategory" destination="eBD-o8-JnF" id="DNY-FL-KVV"/>
+                        <outlet property="LabelOfHotSales" destination="vuA-N7-076" id="274-am-Ko6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

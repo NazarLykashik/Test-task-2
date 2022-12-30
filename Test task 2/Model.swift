@@ -15,6 +15,18 @@ struct HomeStore: Decodable{
     let picture: String?
     let is_buy: Bool?
     
+    static func fetchHomeStore() -> [HomeStore]{
+        let firstItem = HomeStore(id: 1, is_new: true, title: "Iphone 12", subtitle: "df", picture: "Phones", is_buy: true)
+        
+        let secondItem = HomeStore(id: 2, is_new: true, title: "Iphone 12", subtitle: "df", picture: "Phones", is_buy: true)
+        
+        let thirdItem = HomeStore(id: 3, is_new: true, title: "Iphone 12", subtitle: "df", picture: "Phones", is_buy: true)
+        
+        let fouthItem = HomeStore(id: 4, is_new: true, title: "Iphone 12", subtitle: "df", picture: "Phones", is_buy: true)
+        
+        return [firstItem, secondItem, thirdItem, fouthItem]
+    }
+    
 }
 
 struct BestSeller: Decodable{
