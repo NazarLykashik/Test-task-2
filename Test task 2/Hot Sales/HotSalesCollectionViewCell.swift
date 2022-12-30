@@ -11,17 +11,40 @@ class HotSalesCollectionViewCell: UICollectionViewCell {
     
     static let reuseId = "HotSalesCollectionViewCell"
     
+
+    func configure(with hotSales: HomeStore){
+        nameTitle.text = hotSales.title
+        
+        DispatchQueue.global().async {
+            guard let imageUrl = URL(string: hotSales.picture!) else {return}
+            guard let imageData = try? Data(contentsOf: imageUrl) else {return}
+            
+            DispatchQueue.main.async {
+                self.picture.image = UIImage(data: imageData)
+            }
+        }
+    }
+    
     let picture: UIImageView = {
         let picture = UIImageView()
         picture.translatesAutoresizingMaskIntoConstraints = false
-        picture.contentMode = .scaleAspectFit
+        picture.contentMode = .scaleAspectFill
         return picture
     }()
     
     let nameTitle: UILabel = {
         let title = UILabel()
-        title.font = UIFont.systemFont(ofSize: 12, weight: .bold)
-        title.textColor = #colorLiteral(red: 0.005752829369, green: 0, blue: 0.2077296376, alpha: 1)
+        title.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        title.textColor = #colorLiteral(red: 0.9372549057, green: 0.9372549057, blue: 0.9372549057, alpha: 1)
+        title.numberOfLines = 0
+        title.translatesAutoresizingMaskIntoConstraints = false
+        return title
+    }()
+    
+    let subTitle: UILabel = {
+        let title = UILabel()
+        title.font = UIFont.systemFont(ofSize: 12, weight: .light)
+        title.textColor = #colorLiteral(red: 0.9372549057, green: 0.9372549057, blue: 0.9372549057, alpha: 1)
         title.numberOfLines = 0
         title.translatesAutoresizingMaskIntoConstraints = false
         return title
@@ -37,12 +60,14 @@ class HotSalesCollectionViewCell: UICollectionViewCell {
         picture.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         picture.topAnchor.constraint(equalTo: topAnchor).isActive = true
         //mainImageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        picture.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 8/10).isActive = true
+        picture.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
         
-        // MARK: - дорабоать центрирование текста и цвет текста первой иконки
-        nameTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
+        nameTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8).isActive = true
         nameTitle.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        nameTitle.topAnchor.constraint(equalTo: topAnchor, constant: 65).isActive = true
+        nameTitle.topAnchor.constraint(equalTo: topAnchor, constant: 55).isActive = true
+        
+        subTitle.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implamented")
