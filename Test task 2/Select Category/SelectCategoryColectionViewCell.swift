@@ -7,9 +7,9 @@
 
 import UIKit
 
-class GalleryCollectionViewCell: UICollectionViewCell {
+class SelectCategoryCollectionViewCell: UICollectionViewCell {
     
-    static let reuseId = "GalleryCollectionViewCell"
+    static let reuseId = "SelectCategoryCollectionViewCell"
     
     let mainImageView: UIImageView = {
         let imageView = UIImageView()

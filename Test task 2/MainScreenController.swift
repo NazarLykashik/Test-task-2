@@ -10,7 +10,7 @@ import UIKit
 class MainScreenViewController: UIViewController {
     
     @IBOutlet var LabelOfCategory: UILabel!
-    private var galleryColectionView = GalleryCollectionView()
+    private var SelectCategoryColectionView = SelectCategoryCollectionView()
     
     private var homeStore: [HomeStore] = []
     private var bestSeller: [BestSeller] = []
@@ -21,14 +21,14 @@ class MainScreenViewController: UIViewController {
         fechData()
         super.viewDidLoad()
         
-        view.addSubview(galleryColectionView)
+        view.addSubview(SelectCategoryColectionView)
         
-        galleryColectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        galleryColectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        galleryColectionView.topAnchor.constraint(equalTo: LabelOfCategory.bottomAnchor, constant: 5).isActive = true
-        galleryColectionView.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        SelectCategoryColectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        SelectCategoryColectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        SelectCategoryColectionView.topAnchor.constraint(equalTo: LabelOfCategory.bottomAnchor, constant: 5).isActive = true
+        SelectCategoryColectionView.heightAnchor.constraint(equalToConstant: 80).isActive = true
         
-        galleryColectionView.set(cells: GalleryModel.fetchModel())
+        SelectCategoryColectionView.set(cells: SelectCategoryModel.fetchModel())
         
     }
     func fechData(){

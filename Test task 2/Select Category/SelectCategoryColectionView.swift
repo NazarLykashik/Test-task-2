@@ -8,9 +8,9 @@
 import UIKit
 
 
-class GalleryCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class SelectCategoryCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    var cells: [GalleryModel] = []
+    var cells: [SelectCategoryModel] = []
     
     init(){
         let layout = UICollectionViewFlowLayout()
@@ -20,7 +20,7 @@ class GalleryCollectionView: UICollectionView, UICollectionViewDelegate, UIColle
         backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.9372549057, blue: 0.9372549057, alpha: 1)
         delegate = self
         dataSource = self
-        register(GalleryCollectionViewCell.self, forCellWithReuseIdentifier: GalleryCollectionViewCell.reuseId)
+        register(SelectCategoryCollectionViewCell.self, forCellWithReuseIdentifier: SelectCategoryCollectionViewCell.reuseId)
         translatesAutoresizingMaskIntoConstraints = false
         layout.minimumLineSpacing = Constants.galleryMinimumLineSpacing
         contentInset = UIEdgeInsets(top: 0, left: Constants.leftDistanceToView, bottom: 0, right: Constants.rightDistanceToView)
@@ -29,7 +29,7 @@ class GalleryCollectionView: UICollectionView, UICollectionViewDelegate, UIColle
         showsHorizontalScrollIndicator = false
     }
     
-    func set(cells: [GalleryModel]){
+    func set(cells: [SelectCategoryModel]){
         self.cells = cells
     }
     
@@ -38,7 +38,7 @@ class GalleryCollectionView: UICollectionView, UICollectionViewDelegate, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = dequeueReusableCell(withReuseIdentifier: GalleryCollectionViewCell.reuseId, for: indexPath) as! GalleryCollectionViewCell
+        let cell = dequeueReusableCell(withReuseIdentifier: SelectCategoryCollectionViewCell.reuseId, for: indexPath) as! SelectCategoryCollectionViewCell
         cell.mainImageView.image = cells[indexPath.row].mainImage
         cell.nameLabel.text = cells[indexPath.row].itemName
         return cell
