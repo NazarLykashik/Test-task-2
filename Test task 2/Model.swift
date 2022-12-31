@@ -15,19 +15,6 @@ struct HomeStore: Codable{
     let picture: String?
     let is_buy: Bool?
     
-//    init(dictHomeStore: [String: Any]){
-//        id = dictHomeStore["id"] as? Int
-//        is_new = dictHomeStore["is_new"] as? Bool
-//        title = dictHomeStore["title"] as? String
-//        subtitle = dictHomeStore["subtitle"] as? String
-//        picture = dictHomeStore["picture"] as? String
-//        is_buy = dictHomeStore["is_buy"] as? Bool
-//    }
-    
-//    static func getHomeStore(from jsonData: Any) -> [HomeStore]{
-//        guard let jsonData = jsonData as? Array <[String: Any]> else {return []}
-//        return jsonData.compactMap{ HomeStore(dictHomeStore: $0) }
-//    }
 }
 struct ConstantsHomeStore{
     static let leftDistanceToView: CGFloat = 0
@@ -35,7 +22,6 @@ struct ConstantsHomeStore{
     static let galleryMinimumLineSpacing: CGFloat = 0
     static let galleryItemWidth = 200
     
-    //(UIScreen.main.bounds.width - Constants.leftDistanceToView - Constants.rightDistanceToView - (Constants.galleryMinimumLineSpacing / 2 )) / 2
 }
 
 struct BestSeller: Decodable{

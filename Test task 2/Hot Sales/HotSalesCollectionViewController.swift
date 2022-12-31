@@ -25,8 +25,8 @@ class HotSalesCollectionView: UICollectionView, UICollectionViewDelegate, UIColl
 
         register(HotSalesCollectionViewCell.self, forCellWithReuseIdentifier: HotSalesCollectionViewCell.reuseId)
         translatesAutoresizingMaskIntoConstraints = false
-        layout.minimumLineSpacing = 0
-        contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.minimumLineSpacing = 10
+        contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
@@ -40,11 +40,10 @@ class HotSalesCollectionView: UICollectionView, UICollectionViewDelegate, UIColl
         let cell = dequeueReusableCell(withReuseIdentifier: HotSalesCollectionViewCell.reuseId, for: indexPath) as! HotSalesCollectionViewCell
         let cellsHotSale = cellsHotSales[indexPath.row]
         cell.configure(with: cellsHotSale)
-        
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 375, height: 180)
+        return CGSize(width: 355, height: 180)
     }
     
     required init?(coder: NSCoder) {

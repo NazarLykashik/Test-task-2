@@ -16,6 +16,7 @@ class HotSalesCollectionViewCell: UICollectionViewCell {
         nameTitle.text = hotSales.title
         subTitle.text = hotSales.subtitle
         
+        
         DispatchQueue.global().async {
             guard let imageUrl = URL(string: hotSales.picture!) else {return}
             guard let imageData = try? Data(contentsOf: imageUrl) else {return}
@@ -61,8 +62,9 @@ class HotSalesCollectionViewCell: UICollectionViewCell {
         picture.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         picture.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         picture.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        //mainImageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         picture.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
+        picture.layer.cornerRadius = 10
+        picture.layer.masksToBounds = true
         
         nameTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8).isActive = true
         nameTitle.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
