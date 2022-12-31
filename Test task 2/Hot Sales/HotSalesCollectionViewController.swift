@@ -22,6 +22,7 @@ class HotSalesCollectionView: UICollectionView, UICollectionViewDelegate, UIColl
         backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.9372549057, blue: 0.9372549057, alpha: 1)
         delegate = self
         dataSource = self
+
         register(HotSalesCollectionViewCell.self, forCellWithReuseIdentifier: HotSalesCollectionViewCell.reuseId)
         translatesAutoresizingMaskIntoConstraints = false
         layout.minimumLineSpacing = 0

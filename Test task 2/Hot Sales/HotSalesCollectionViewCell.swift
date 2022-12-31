@@ -14,6 +14,7 @@ class HotSalesCollectionViewCell: UICollectionViewCell {
 
     func configure(with hotSales: HomeStore){
         nameTitle.text = hotSales.title
+        subTitle.text = hotSales.subtitle
         
         DispatchQueue.global().async {
             guard let imageUrl = URL(string: hotSales.picture!) else {return}
@@ -43,7 +44,7 @@ class HotSalesCollectionViewCell: UICollectionViewCell {
     
     let subTitle: UILabel = {
         let title = UILabel()
-        title.font = UIFont.systemFont(ofSize: 12, weight: .light)
+        title.font = UIFont.systemFont(ofSize: 10, weight: .regular)
         title.textColor = #colorLiteral(red: 0.9372549057, green: 0.9372549057, blue: 0.9372549057, alpha: 1)
         title.numberOfLines = 0
         title.translatesAutoresizingMaskIntoConstraints = false
@@ -55,6 +56,7 @@ class HotSalesCollectionViewCell: UICollectionViewCell {
         
         addSubview(picture)
         addSubview(nameTitle)
+        addSubview(subTitle)
         
         picture.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         picture.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
@@ -64,10 +66,11 @@ class HotSalesCollectionViewCell: UICollectionViewCell {
         
         nameTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8).isActive = true
         nameTitle.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        nameTitle.topAnchor.constraint(equalTo: topAnchor, constant: 55).isActive = true
+        nameTitle.topAnchor.constraint(equalTo: topAnchor, constant: 95).isActive = true
         
-        subTitle.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        
+        subTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8).isActive = true
+        subTitle.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        subTitle.topAnchor.constraint(equalTo: topAnchor, constant: 120).isActive = true
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implamented")
