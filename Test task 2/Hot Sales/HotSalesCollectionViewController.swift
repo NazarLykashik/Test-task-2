@@ -18,7 +18,7 @@ class HotSalesCollectionView: UICollectionView, UICollectionViewDelegate, UIColl
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         super.init(frame: .zero, collectionViewLayout: layout)
-        
+
         backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.9372549057, blue: 0.9372549057, alpha: 1)
         delegate = self
         dataSource = self
@@ -26,7 +26,7 @@ class HotSalesCollectionView: UICollectionView, UICollectionViewDelegate, UIColl
         register(HotSalesCollectionViewCell.self, forCellWithReuseIdentifier: HotSalesCollectionViewCell.reuseId)
         translatesAutoresizingMaskIntoConstraints = false
         layout.minimumLineSpacing = 10
-        contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
         
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false

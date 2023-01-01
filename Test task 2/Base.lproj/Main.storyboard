@@ -69,7 +69,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
                                 </state>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="     Search" textAlignment="natural" minimumFontSize="17" background="BooksInBar" translatesAutoresizingMaskIntoConstraints="NO" id="Sp2-gK-FzI">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="     Search" textAlignment="natural" minimumFontSize="17" background="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Sp2-gK-FzI">
                                 <rect key="frame" x="28" y="200" width="278" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -146,9 +146,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BooksInBar" width="157" height="157"/>
         <image name="Filter" width="166.66667175292969" height="166.66667175292969"/>
         <image name="PinGeolocation" width="28.333333969116211" height="28.333333969116211"/>
         <image name="SearchFilter" width="166.66667175292969" height="166.66667175292969"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
     </resources>
 </document>

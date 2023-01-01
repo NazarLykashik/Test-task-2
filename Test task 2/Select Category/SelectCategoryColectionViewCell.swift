@@ -40,8 +40,7 @@ class SelectCategoryCollectionViewCell: UICollectionViewCell {
         mainImageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 8/10).isActive = true
         
         // MARK: - дорабоать центрирование текста и цвет текста первой иконки
-        nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
-        nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        nameLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 65).isActive = true
     }
     required init?(coder: NSCoder) {

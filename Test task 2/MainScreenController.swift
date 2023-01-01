@@ -39,8 +39,9 @@ class MainScreenViewController: UIViewController {
         
         view.addSubview(HotSalesColectionView)
         
-        HotSalesColectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        HotSalesColectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
         HotSalesColectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+
         HotSalesColectionView.topAnchor.constraint(equalTo: LabelOfHotSales.bottomAnchor, constant: 5).isActive = true
         HotSalesColectionView.heightAnchor.constraint(equalToConstant: 180).isActive = true
         
