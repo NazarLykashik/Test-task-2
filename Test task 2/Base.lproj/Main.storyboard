@@ -14,11 +14,11 @@
             <objects>
                 <viewController id="Lay-zB-cnn" customClass="MainScreenViewController" customModule="Test_task_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8uK-tL-sAT" userLabel="RootView">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJw-Q1-dZj">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uuu-DW-2sg">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
@@ -163,7 +163,7 @@
                             <constraint firstItem="pJw-Q1-dZj" firstAttribute="top" secondItem="8uK-tL-sAT" secondAttribute="top" id="pQU-oU-gBs"/>
                         </constraints>
                     </view>
-                    <size key="freeformSize" width="375" height="1300"/>
+                    <size key="freeformSize" width="375" height="750"/>
                     <connections>
                         <outlet property="LabelOfBestSellers" destination="xCA-O7-yO2" id="Auu-Bb-TXT"/>
                         <outlet property="LabelOfCategory" destination="hYC-mR-nUv" id="9tW-Xb-o2z"/>

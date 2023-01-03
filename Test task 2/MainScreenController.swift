@@ -49,10 +49,10 @@ class MainScreenViewController: UIViewController {
         
         view.addSubview(BestSellersCollectionView)
         
-        BestSellersCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        BestSellersCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
         BestSellersCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         BestSellersCollectionView.topAnchor.constraint(equalTo: LabelOfBestSellers.bottomAnchor, constant: 5).isActive = true
-        BestSellersCollectionView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        BestSellersCollectionView.heightAnchor.constraint(equalToConstant: 500).isActive = true
         
         
         
@@ -72,6 +72,7 @@ class MainScreenViewController: UIViewController {
                 
                 DispatchQueue.main.async {
                     self.HotSalesColectionView.reloadData()
+                    self.BestSellersCollectionView.reloadData()
                 }
             }
             catch let error{

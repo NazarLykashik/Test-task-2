@@ -16,12 +16,12 @@ class BestSellerCollectionViewController: UICollectionView, UIColorPickerViewCon
     init(){
         
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
         super.init(frame: .zero, collectionViewLayout: layout)
         
-        backgroundColor = #colorLiteral(red: 0.007841579616, green: 0.007844132371, blue: 0.007841020823, alpha: 1)
+        backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.9372549057, blue: 0.9372549057, alpha: 1)
         delegate = self
         dataSource = self
+        scrollsToTop = false
         
         register(BestSellerCollectionViewCell.self, forCellWithReuseIdentifier: BestSellerCollectionViewCell.reuseId)
         translatesAutoresizingMaskIntoConstraints = false
@@ -30,7 +30,6 @@ class BestSellerCollectionViewController: UICollectionView, UIColorPickerViewCon
         
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
-        isPagingEnabled = true
     }
     
     
@@ -43,6 +42,9 @@ class BestSellerCollectionViewController: UICollectionView, UIColorPickerViewCon
         let cellsBestSale = cellsBestSellers[indexPath.row]
         cell.configure(with: cellsBestSale)
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 172, height: 222)
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

@@ -26,10 +26,10 @@ struct ConstantsHomeStore{
 
 struct BestSeller: Codable{
     let id: Int?
-    let is_favorittes: Bool?
+    let is_favorites: Bool?
     let title: String?
-    let price_without_discont: Int?
-    let discont_price: Int?
+    let price_without_discount: Double
+    let discount_price: Float
     let picture: String?
 }
 
@@ -62,8 +62,11 @@ struct SelectCategoryModel{
     }
 }
 struct Constants{
+    
     static let leftDistanceToView: CGFloat = 8
     static let rightDistanceToView: CGFloat = 8
     static let galleryMinimumLineSpacing: CGFloat = 5
     static let galleryItemWidth = (UIScreen.main.bounds.width - Constants.leftDistanceToView - Constants.rightDistanceToView - (Constants.galleryMinimumLineSpacing / 2 )) / 2
+    
+    //static let bestSellerHaist = Constants
 }
