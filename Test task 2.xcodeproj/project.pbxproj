@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C220324729644B1800681C3C /* BestSellerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C220324629644B1800681C3C /* BestSellerCollectionViewCell.swift */; };
+		C220324929644B3A00681C3C /* BestSellerCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C220324829644B3A00681C3C /* BestSellerCollectionViewController.swift */; };
 		C28AF28F295DC68F006429FB /* SelectCategoryColectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28AF28E295DC68F006429FB /* SelectCategoryColectionView.swift */; };
 		C28AF291295DDBCF006429FB /* SelectCategoryColectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28AF290295DDBCF006429FB /* SelectCategoryColectionViewCell.swift */; };
 		C28AF294295E6671006429FB /* HotSalesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28AF293295E6671006429FB /* HotSalesCollectionViewController.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C220324629644B1800681C3C /* BestSellerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestSellerCollectionViewCell.swift; sourceTree = "<group>"; };
+		C220324829644B3A00681C3C /* BestSellerCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestSellerCollectionViewController.swift; sourceTree = "<group>"; };
 		C28AF28E295DC68F006429FB /* SelectCategoryColectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryColectionView.swift; sourceTree = "<group>"; };
 		C28AF290295DDBCF006429FB /* SelectCategoryColectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryColectionViewCell.swift; sourceTree = "<group>"; };
 		C28AF293295E6671006429FB /* HotSalesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSalesCollectionViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +55,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C220324A29644B4100681C3C /* Best Seller */ = {
+			isa = PBXGroup;
+			children = (
+				C220324829644B3A00681C3C /* BestSellerCollectionViewController.swift */,
+				C220324629644B1800681C3C /* BestSellerCollectionViewCell.swift */,
+			);
+			path = "Best Seller";
+			sourceTree = "<group>";
+		};
 		C28AF292295E659F006429FB /* Select Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +113,7 @@
 				C2FC8AFD295C73250040E4A5 /* AppDelegate.swift */,
 				C2FC8AFF295C73250040E4A5 /* SceneDelegate.swift */,
 				C2FC8B01295C73250040E4A5 /* MainScreenController.swift */,
+				C220324A29644B4100681C3C /* Best Seller */,
 				C28AF297295F1808006429FB /* Hot Sales */,
 				C28AF292295E659F006429FB /* Select Category */,
 				C2FC8B13295C7B170040E4A5 /* Model.swift */,
@@ -185,10 +199,12 @@
 			files = (
 				C2FC8B14295C7B170040E4A5 /* Model.swift in Sources */,
 				C28AF291295DDBCF006429FB /* SelectCategoryColectionViewCell.swift in Sources */,
+				C220324729644B1800681C3C /* BestSellerCollectionViewCell.swift in Sources */,
 				C28AF296295E684B006429FB /* HotSalesCollectionViewCell.swift in Sources */,
 				C2FC8B02295C73250040E4A5 /* MainScreenController.swift in Sources */,
 				C2F7939A295F191100023BB7 /* StarageManager.swift in Sources */,
 				C28AF28F295DC68F006429FB /* SelectCategoryColectionView.swift in Sources */,
+				C220324929644B3A00681C3C /* BestSellerCollectionViewController.swift in Sources */,
 				C2FC8AFE295C73250040E4A5 /* AppDelegate.swift in Sources */,
 				C2FC8B00295C73250040E4A5 /* SceneDelegate.swift in Sources */,
 				C28AF294295E6671006429FB /* HotSalesCollectionViewController.swift in Sources */,

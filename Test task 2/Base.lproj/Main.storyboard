@@ -165,6 +165,7 @@
                     </view>
                     <size key="freeformSize" width="375" height="1300"/>
                     <connections>
+                        <outlet property="LabelOfBestSellers" destination="xCA-O7-yO2" id="Auu-Bb-TXT"/>
                         <outlet property="LabelOfCategory" destination="hYC-mR-nUv" id="9tW-Xb-o2z"/>
                         <outlet property="LabelOfHotSales" destination="KBg-e0-8Lc" id="xjK-nc-j9C"/>
                     </connections>

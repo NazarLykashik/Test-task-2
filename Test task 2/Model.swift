@@ -24,7 +24,7 @@ struct ConstantsHomeStore{
     
 }
 
-struct BestSeller: Decodable{
+struct BestSeller: Codable{
     let id: Int?
     let is_favorittes: Bool?
     let title: String?
