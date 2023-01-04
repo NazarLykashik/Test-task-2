@@ -12,6 +12,7 @@ class MainScreenViewController: UIViewController {
     @IBOutlet var LabelOfCategory: UILabel!
     @IBOutlet var LabelOfHotSales: UILabel!
     @IBOutlet var LabelOfBestSellers: UILabel!
+    @IBOutlet var foter: UIView!
     
     private var SelectCategoryColectionView = SelectCategoryCollectionView()
     private var HotSalesColectionView = HotSalesCollectionView()
@@ -53,6 +54,8 @@ class MainScreenViewController: UIViewController {
         BestSellersCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         BestSellersCollectionView.topAnchor.constraint(equalTo: LabelOfBestSellers.bottomAnchor, constant: 5).isActive = true
         BestSellersCollectionView.heightAnchor.constraint(equalToConstant: 470).isActive = true
+        
+        view.addSubview(foter)
         
         
         

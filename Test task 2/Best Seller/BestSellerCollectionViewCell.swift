@@ -122,7 +122,6 @@ class BestSellerCollectionViewCell: UICollectionViewCell {
             old_price.topAnchor.constraint(equalTo: topAnchor, constant: 180).isActive = true
             
             favoriteObjectButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 135).isActive = true
-            //favoriteObjectButton.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
             favoriteObjectButton.topAnchor.constraint(equalTo: topAnchor, constant: 12).isActive = true
             favoriteObjectButton.widthAnchor.constraint(equalToConstant: 32).isActive = true
             favoriteObjectButton.heightAnchor.constraint(equalToConstant: 32).isActive = true
