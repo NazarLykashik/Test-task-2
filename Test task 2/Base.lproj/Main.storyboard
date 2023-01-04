@@ -14,14 +14,14 @@
             <objects>
                 <viewController id="Lay-zB-cnn" customClass="MainScreenViewController" customModule="Test_task_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8uK-tL-sAT" userLabel="RootView">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="990"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJw-Q1-dZj">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="990"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uuu-DW-2sg">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="990"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Rs-XT-Xyw">
                                                 <rect key="frame" x="91" y="8" width="193" height="43"/>
@@ -141,7 +141,7 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="1300" id="WIp-dd-0T0"/>
+                                            <constraint firstAttribute="height" constant="990" id="WIp-dd-0T0"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -163,7 +163,7 @@
                             <constraint firstItem="pJw-Q1-dZj" firstAttribute="top" secondItem="8uK-tL-sAT" secondAttribute="top" id="pQU-oU-gBs"/>
                         </constraints>
                     </view>
-                    <size key="freeformSize" width="375" height="750"/>
+                    <size key="freeformSize" width="375" height="990"/>
                     <connections>
                         <outlet property="LabelOfBestSellers" destination="xCA-O7-yO2" id="Auu-Bb-TXT"/>
                         <outlet property="LabelOfCategory" destination="hYC-mR-nUv" id="9tW-Xb-o2z"/>
