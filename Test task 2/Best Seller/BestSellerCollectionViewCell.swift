@@ -18,12 +18,8 @@ class BestSellerCollectionViewCell: UICollectionViewCell {
         price.text = "$\(Int(bestSellers.price_without_discount))"
         old_price.text = "$\(Int(bestSellers.discount_price))"
         
-
-        print(bestSellers)
         
-        let favoriteMark = bestSellers.is_favorites!
-
-        //favoriteObjectButton.image = UIImage(named: "LikeUnselected")
+        let favoriteMark = bestSellers.is_favorites
         
         if favoriteMark == false {
             favoriteObjectButton.image = UIImage(named: "LikeUnselected")
