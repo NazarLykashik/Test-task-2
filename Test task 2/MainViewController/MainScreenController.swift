@@ -9,6 +9,7 @@ import UIKit
 
 class MainScreenViewController: UIViewController {
     
+    
     @IBOutlet var LabelOfCategory: UILabel!
     @IBOutlet var LabelOfHotSales: UILabel!
     @IBOutlet var LabelOfBestSellers: UILabel!
@@ -26,9 +27,11 @@ class MainScreenViewController: UIViewController {
     private var bestSeller: [BestSeller] = []
     
     private let jsonUrl = "https://run.mocky.io/v3/654bd15e-b121-49ba-a588-960956b15175"
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         fechData()
         homeStore = StorageManager.shared.getHomeStore()
         bestSeller = StorageManager.shared.getBestSeller()
@@ -100,5 +103,6 @@ class MainScreenViewController: UIViewController {
             }
         }.resume()
     }
+    
 }
 

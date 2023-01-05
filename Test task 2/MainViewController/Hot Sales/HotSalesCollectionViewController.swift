@@ -12,17 +12,17 @@ private let reuseIdentifier = "HotSalesCell"
 class HotSalesCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var cellsHotSales = StorageManager.shared.getHomeStore()
-
+    
     
     init(){
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         super.init(frame: .zero, collectionViewLayout: layout)
-
+        
         backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.9372549057, blue: 0.9372549057, alpha: 1)
         delegate = self
         dataSource = self
-
+        
         register(HotSalesCollectionViewCell.self, forCellWithReuseIdentifier: HotSalesCollectionViewCell.reuseId)
         translatesAutoresizingMaskIntoConstraints = false
         layout.minimumLineSpacing = 10
@@ -31,6 +31,10 @@ class HotSalesCollectionView: UICollectionView, UICollectionViewDelegate, UIColl
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
         isPagingEnabled = true
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -46,10 +50,22 @@ class HotSalesCollectionView: UICollectionView, UICollectionViewDelegate, UIColl
         return CGSize(width: 355, height: 180)
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+ 
+        let detailVC = DetailViewController()
+        detailVC.
+        
+
+        
+        print("23")
     }
     
+    func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailViewController"{
+            let detailVC = segue.destination as! DetailViewController
+        }
+    }
+
 }
     
 

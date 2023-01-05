@@ -144,7 +144,7 @@
                                                 </buttonConfiguration>
                                             </button>
                                             <view autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D3o-eX-MAh">
-                                                <rect key="frame" x="0.0" y="602" width="377" height="60"/>
+                                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R68-Ch-KjF">
@@ -195,7 +195,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view hidden="YES" contentMode="scaleToFill" id="Z2K-Jy-LeL" userLabel="Filter">
-                                                <rect key="frame" x="0.0" y="344" width="375" height="318"/>
+                                                <rect key="frame" x="0.0" y="349" width="375" height="318"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDg-iL-uLZ">
@@ -375,6 +375,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5bP-BE-t19" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="804" y="137.18140929535232"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="PUb-ZR-bec">
+            <objects>
+                <viewController storyboardIdentifier="detailViewController" id="KW5-mW-aS6" customClass="DetailViewController" customModule="Test_task_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="V7n-g3-Frs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Z8F-Iu-Aep"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="TDO-Rz-ZKr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0m1-mo-3Ra" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1607" y="137"/>
         </scene>
     </scenes>
     <resources>
