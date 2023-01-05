@@ -194,7 +194,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" id="Z2K-Jy-LeL" userLabel="Filter">
+                                            <view hidden="YES" contentMode="scaleToFill" id="Z2K-Jy-LeL" userLabel="Filter">
                                                 <rect key="frame" x="0.0" y="344" width="375" height="318"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
@@ -336,6 +336,11 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1200" id="WIp-dd-0T0"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="subviews">
+                                                <exclude reference="Z2K-Jy-LeL"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                 </subviews>
                                 <constraints>
