@@ -21,6 +21,7 @@ class MainScreenViewController: UIViewController {
     private var SelectCategoryColectionView = SelectCategoryCollectionView()
     private var HotSalesColectionView = HotSalesCollectionView()
     private var BestSellersCollectionView = BestSellerCollectionViewController()
+
     
     private var bothPages: [JSONResponce] = []
     private var homeStore: [HomeStore] = []
@@ -48,25 +49,43 @@ class MainScreenViewController: UIViewController {
         
         view.addSubview(HotSalesColectionView)
         
-        HotSalesColectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
-        HotSalesColectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        HotSalesColectionView.handleClick = {
+            self.handleClick()
+        }
+        BestSellersCollectionView.handleClick = {
+            self.handleClick()
+        }
+            
+            HotSalesColectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
+            HotSalesColectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+            
+            HotSalesColectionView.topAnchor.constraint(equalTo: LabelOfHotSales.bottomAnchor, constant: 5).isActive = true
+            HotSalesColectionView.heightAnchor.constraint(equalToConstant: 180).isActive = true
+            
+            view.addSubview(BestSellersCollectionView)
+            
+            BestSellersCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
+            BestSellersCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+            BestSellersCollectionView.topAnchor.constraint(equalTo: LabelOfBestSellers.bottomAnchor, constant: 5).isActive = true
+            BestSellersCollectionView.heightAnchor.constraint(equalToConstant: 470).isActive = true
+            
+            view.addSubview(foter)
+            view.addSubview(filter)
+            
+            
+            
+        }
+    
+        
+        func handleClick(){
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let secondVC = storyboard.instantiateViewController(identifier: "detailViewController") as! DetailViewController
+            
+            self.present(secondVC, animated: true, completion: nil)
+        }
 
-        HotSalesColectionView.topAnchor.constraint(equalTo: LabelOfHotSales.bottomAnchor, constant: 5).isActive = true
-        HotSalesColectionView.heightAnchor.constraint(equalToConstant: 180).isActive = true
-        
-        view.addSubview(BestSellersCollectionView)
-        
-        BestSellersCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
-        BestSellersCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        BestSellersCollectionView.topAnchor.constraint(equalTo: LabelOfBestSellers.bottomAnchor, constant: 5).isActive = true
-        BestSellersCollectionView.heightAnchor.constraint(equalToConstant: 470).isActive = true
-        
-        view.addSubview(foter)
-        view.addSubview(filter)
-        
-        
-        
-    }
+    
+
     
     
     @IBAction func filterButtonPressed(_ sender: Any) {

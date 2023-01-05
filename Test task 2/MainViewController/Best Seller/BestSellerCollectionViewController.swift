@@ -13,6 +13,8 @@ class BestSellerCollectionViewController: UICollectionView, UIColorPickerViewCon
     
     var cellsBestSellers = StorageManager.shared.getBestSeller()
     
+    var handleClick: (() -> Void)? = nil
+    
     init(){
         
         let layout = UICollectionViewFlowLayout()
@@ -45,6 +47,10 @@ class BestSellerCollectionViewController: UICollectionView, UIColorPickerViewCon
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 172, height: 222)
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+ 
+        handleClick?()
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

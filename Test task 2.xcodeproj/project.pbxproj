@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C220324729644B1800681C3C /* BestSellerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C220324629644B1800681C3C /* BestSellerCollectionViewCell.swift */; };
 		C220324929644B3A00681C3C /* BestSellerCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C220324829644B3A00681C3C /* BestSellerCollectionViewController.swift */; };
+		C24CCE62296771F6006E71C8 /* ProductDetailsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24CCE61296771F6006E71C8 /* ProductDetailsCollectionViewController.swift */; };
+		C24CCE6429677215006E71C8 /* ProductDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24CCE6329677215006E71C8 /* ProductDetailCollectionViewCell.swift */; };
 		C27C2DBC2967273100DACF44 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27C2DBB2967273100DACF44 /* DetailViewController.swift */; };
 		C28AF28F295DC68F006429FB /* SelectCategoryColectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28AF28E295DC68F006429FB /* SelectCategoryColectionView.swift */; };
 		C28AF291295DDBCF006429FB /* SelectCategoryColectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28AF290295DDBCF006429FB /* SelectCategoryColectionViewCell.swift */; };
@@ -28,6 +30,8 @@
 /* Begin PBXFileReference section */
 		C220324629644B1800681C3C /* BestSellerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestSellerCollectionViewCell.swift; sourceTree = "<group>"; };
 		C220324829644B3A00681C3C /* BestSellerCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestSellerCollectionViewController.swift; sourceTree = "<group>"; };
+		C24CCE61296771F6006E71C8 /* ProductDetailsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsCollectionViewController.swift; sourceTree = "<group>"; };
+		C24CCE6329677215006E71C8 /* ProductDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		C27C2DBB2967273100DACF44 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C28AF28E295DC68F006429FB /* SelectCategoryColectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryColectionView.swift; sourceTree = "<group>"; };
 		C28AF290295DDBCF006429FB /* SelectCategoryColectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryColectionViewCell.swift; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				C27C2DBB2967273100DACF44 /* DetailViewController.swift */,
+				C24CCE61296771F6006E71C8 /* ProductDetailsCollectionViewController.swift */,
+				C24CCE6329677215006E71C8 /* ProductDetailCollectionViewCell.swift */,
 			);
 			path = DetailViewController;
 			sourceTree = "<group>";
@@ -221,10 +227,12 @@
 				C220324729644B1800681C3C /* BestSellerCollectionViewCell.swift in Sources */,
 				C28AF296295E684B006429FB /* HotSalesCollectionViewCell.swift in Sources */,
 				C2FC8B02295C73250040E4A5 /* MainScreenController.swift in Sources */,
+				C24CCE6429677215006E71C8 /* ProductDetailCollectionViewCell.swift in Sources */,
 				C2F7939A295F191100023BB7 /* StarageManager.swift in Sources */,
 				C28AF28F295DC68F006429FB /* SelectCategoryColectionView.swift in Sources */,
 				C220324929644B3A00681C3C /* BestSellerCollectionViewController.swift in Sources */,
 				C27C2DBC2967273100DACF44 /* DetailViewController.swift in Sources */,
+				C24CCE62296771F6006E71C8 /* ProductDetailsCollectionViewController.swift in Sources */,
 				C2FC8AFE295C73250040E4A5 /* AppDelegate.swift in Sources */,
 				C2FC8B00295C73250040E4A5 /* SceneDelegate.swift in Sources */,
 				C28AF294295E6671006429FB /* HotSalesCollectionViewController.swift in Sources */,

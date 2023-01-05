@@ -11,6 +11,8 @@ private let reuseIdentifier = "HotSalesCell"
 
 class HotSalesCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    var handleClick: (() -> Void)? = nil
+    
     var cellsHotSales = StorageManager.shared.getHomeStore()
     
     
@@ -52,20 +54,9 @@ class HotSalesCollectionView: UICollectionView, UICollectionViewDelegate, UIColl
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
  
-        let detailVC = DetailViewController()
-        detailVC.
-        
-
-        
-        print("23")
+        handleClick?()
     }
     
-    func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "detailViewController"{
-            let detailVC = segue.destination as! DetailViewController
-        }
-    }
-
 }
     
 
