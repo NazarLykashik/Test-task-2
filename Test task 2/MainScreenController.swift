@@ -13,6 +13,9 @@ class MainScreenViewController: UIViewController {
     @IBOutlet var LabelOfHotSales: UILabel!
     @IBOutlet var LabelOfBestSellers: UILabel!
     @IBOutlet var foter: UIView!
+    @IBOutlet var filter: UIView!
+    @IBOutlet var filterButton: UIButton!
+    @IBOutlet var closeFiler: UIButton!
     
     private var SelectCategoryColectionView = SelectCategoryCollectionView()
     private var HotSalesColectionView = HotSalesCollectionView()
@@ -56,9 +59,23 @@ class MainScreenViewController: UIViewController {
         BestSellersCollectionView.heightAnchor.constraint(equalToConstant: 470).isActive = true
         
         view.addSubview(foter)
+        view.addSubview(filter)
         
         
         
+    }
+    
+    
+    @IBAction func filterButtonPressed(_ sender: Any) {
+        if filter.isHidden == true {
+            filter.isHidden = false
+        }else{
+            filter.isHidden = true
+        }
+        
+    }
+    @IBAction func closeFilterPress(_ sender: Any) {
+        filter.isHidden = true
     }
     
     
