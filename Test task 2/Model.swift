@@ -16,13 +16,13 @@ struct HomeStore: Codable{
     let is_buy: Bool?
     
 }
-struct ConstantsHomeStore{
-    static let leftDistanceToView: CGFloat = 0
-    static let rightDistanceToView: CGFloat = 0
-    static let galleryMinimumLineSpacing: CGFloat = 0
-    static let galleryItemWidth = 200
-    
-}
+//struct ConstantsHomeStore{
+//    static let leftDistanceToView: CGFloat = 0
+//    static let rightDistanceToView: CGFloat = 0
+//    static let galleryMinimumLineSpacing: CGFloat = 0
+//    static let galleryItemWidth = 200
+//
+//}
 
 struct BestSeller: Codable{
     let id: Int?
@@ -37,6 +37,23 @@ struct JSONResponce: Decodable{
     let home_store: [HomeStore]?
     let best_seller: [BestSeller]?
 }
+
+struct ProductDetails: Decodable, Hashable{
+    let CPU: String?
+    let camera: String?
+    let capacity: [String]?
+    let color: [String]?
+    let id: String?
+    let images: [String]?
+    let isFavorites: Bool?
+    let price: Int?
+    let rating: Float?
+    let sd: String?
+    let ssd: String?
+    let title: String?
+}
+
+
 
 // MARK: - Select Category
 struct SelectCategoryModel{
@@ -68,5 +85,4 @@ struct Constants{
     static let galleryMinimumLineSpacing: CGFloat = 5
     static let galleryItemWidth = (UIScreen.main.bounds.width - Constants.leftDistanceToView - Constants.rightDistanceToView - (Constants.galleryMinimumLineSpacing / 2 )) / 2
     
-    //static let bestSellerHaist = Constants
 }
