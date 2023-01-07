@@ -14,10 +14,17 @@ class DetailViewController: UIViewController {
     @IBOutlet var color1: UIButton!
     @IBOutlet var color2: UIButton!
     
+    @IBOutlet var cpuLabel: UILabel!
+    @IBOutlet var cameraLabel: UILabel!
+    @IBOutlet var ssdMemory: UILabel!
+    @IBOutlet var sdMemory: UILabel!
+    @IBOutlet var titleLabel: UILabel!
     
 
+    
     var compacity = [String]()
     var color = [String]()
+    var pictire = [String]()
 
     
 
@@ -73,12 +80,18 @@ class DetailViewController: UIViewController {
                 
                 self.compacity = phone.capacity ?? ["nil"]
                 self.color = phone.color ?? ["nil"]
+                self.pictire = phone.images ?? ["nil"]
                 
                 DispatchQueue.main.async {
                     self.capacity1.setTitle("\(self.compacity[0]) GB", for: .normal)
                     self.capacity2.setTitle("\(self.compacity[1]) GB", for: .normal)
                     self.color1.layer.backgroundColor = (self.hexStringToUIColor(hex: self.color[0])).cgColor
                     self.color2.layer.backgroundColor = (self.hexStringToUIColor(hex: self.color[1])).cgColor
+                    self.cpuLabel.text = phone.CPU
+                    self.cameraLabel.text = phone.camera
+                    self.ssdMemory.text = phone.ssd
+                    self.sdMemory.text = phone.sd
+                    self.titleLabel.text = phone.title
                 }
             }
             catch let error{
