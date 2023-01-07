@@ -70,6 +70,14 @@
 			path = "Best Seller";
 			sourceTree = "<group>";
 		};
+		C24CCE65296A23E7006E71C8 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				C2FC8B06295C73270040E4A5 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		C27C2DBA2967256B00DACF44 /* MainViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,7 +153,7 @@
 				C2F7939B295F7CC100023BB7 /* Helpers */,
 				C2FC8B03295C73250040E4A5 /* Main.storyboard */,
 				C2FC8B08295C73270040E4A5 /* LaunchScreen.storyboard */,
-				C2FC8B06295C73270040E4A5 /* Assets.xcassets */,
+				C24CCE65296A23E7006E71C8 /* Assets */,
 				C2FC8B0B295C73270040E4A5 /* Info.plist */,
 			);
 			path = "Test task 2";

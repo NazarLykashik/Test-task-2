@@ -20,7 +20,17 @@ class DetailViewController: UIViewController {
     @IBOutlet var sdMemory: UILabel!
     @IBOutlet var titleLabel: UILabel!
     
+    
+    @IBOutlet var star1: UIImageView!
+    @IBOutlet var star2: UIImageView!
+    @IBOutlet var star3: UIImageView!
+    @IBOutlet var star4: UIImageView!
+    @IBOutlet var star5: UIImageView!
+    
+    
 
+
+    let starRaitingCount: Float = 5
     
     var compacity = [String]()
     var color = [String]()
@@ -34,6 +44,13 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         capacity1.backgroundColor = #colorLiteral(red: 0.9978172183, green: 0.432729274, blue: 0.3063272238, alpha: 1)
         color2.titleLabel?.isHidden = true
+        
+        star1.image = #imageLiteral(resourceName: "Star ")
+        star2.image = #imageLiteral(resourceName: "Star ")
+        star3.image = #imageLiteral(resourceName: "Star ")
+        star4.image = #imageLiteral(resourceName: "Star ")
+        star5.image = #imageLiteral(resourceName: "Star ")
+        
         fechData()
 
 
@@ -43,8 +60,10 @@ class DetailViewController: UIViewController {
     @IBAction func capacity1Select(_ sender: Any) {
         capacity2.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         capacity1.backgroundColor = #colorLiteral(red: 0.9978172183, green: 0.432729274, blue: 0.3063272238, alpha: 1)
+        
         capacity1.setTitleColor(.white, for: .normal)
         capacity2.setTitleColor(.black, for: .normal)
+        
         
     }
     
@@ -92,6 +111,7 @@ class DetailViewController: UIViewController {
                     self.ssdMemory.text = phone.ssd
                     self.sdMemory.text = phone.sd
                     self.titleLabel.text = phone.title
+                    self.raiting(starRaitingCount: phone.rating ?? 0)
                 }
             }
             catch let error{
@@ -99,6 +119,73 @@ class DetailViewController: UIViewController {
             }
         }.resume()
     }
+    
+    private func raiting (starRaitingCount: Float){
+        switch starRaitingCount{
+        case 0:
+            star1.image = #imageLiteral(resourceName: "StarUnselected")
+            star2.image = #imageLiteral(resourceName: "StarUnselected")
+            star3.image = #imageLiteral(resourceName: "StarUnselected")
+            star4.image = #imageLiteral(resourceName: "StarUnselected")
+            star5.image = #imageLiteral(resourceName: "StarUnselected")
+            break
+        case 0.5:
+            star1.image = #imageLiteral(resourceName: "Star0.5")
+            star2.image = #imageLiteral(resourceName: "StarUnselected")
+            star3.image = #imageLiteral(resourceName: "StarUnselected")
+            star4.image = #imageLiteral(resourceName: "StarUnselected")
+            star5.image = #imageLiteral(resourceName: "StarUnselected")
+            break
+        case 1:
+            star2.image = #imageLiteral(resourceName: "StarUnselected")
+            star3.image = #imageLiteral(resourceName: "StarUnselected")
+            star4.image = #imageLiteral(resourceName: "StarUnselected")
+            star5.image = #imageLiteral(resourceName: "StarUnselected")
+            break
+        case 1.5:
+            star2.image = #imageLiteral(resourceName: "Star0.5")
+            star3.image = #imageLiteral(resourceName: "StarUnselected")
+            star4.image = #imageLiteral(resourceName: "StarUnselected")
+            star5.image = #imageLiteral(resourceName: "StarUnselected")
+            break
+        case 2:
+            star3.image = #imageLiteral(resourceName: "StarUnselected")
+            star4.image = #imageLiteral(resourceName: "StarUnselected")
+            star5.image = #imageLiteral(resourceName: "StarUnselected")
+            break
+        case 2.5:
+            star3.image = #imageLiteral(resourceName: "Star0.5")
+            star4.image = #imageLiteral(resourceName: "StarUnselected")
+            star5.image = #imageLiteral(resourceName: "StarUnselected")
+            break
+        case 3:
+            star4.image = #imageLiteral(resourceName: "StarUnselected")
+            star5.image = #imageLiteral(resourceName: "StarUnselected")
+            break
+        case 3.5:
+            star4.image = #imageLiteral(resourceName: "Star0.5")
+            star5.image = #imageLiteral(resourceName: "StarUnselected")
+            break
+        case 4:
+            star5.image = #imageLiteral(resourceName: "StarUnselected")
+            break
+        case 4.5:
+            star5.image = #imageLiteral(resourceName: "Star0.5")
+            break
+        default:
+            return
+        }
+
+    }
+    
+    private func makeStarIcon() -> UIImageView {
+             /// declare default icon and highlightedImage
+             let imageView = UIImageView(image: #imageLiteral(resourceName: "IsHiden"), highlightedImage: #imageLiteral(resourceName: "PinGeolocation"))
+             imageView.contentMode = .scaleAspectFit
+             imageView.isUserInteractionEnabled = true
+             return imageView
+    }
+    
     func hexStringToUIColor (hex:String) -> UIColor {
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
 
