@@ -25,16 +25,6 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uuu-DW-2sg">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Rs-XT-Xyw">
-                                                <rect key="frame" x="91" y="8" width="193" height="43"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="tintColor" red="0.99781721830000003" green="0.432729274" blue="0.30632722379999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="PinGeolocation" title="Zihuatanejo, Gro ⌵" imagePadding="0.0">
-                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="small"/>
-                                                    <color key="baseForegroundColor" red="0.0057528293689999999" green="0.0" blue="0.20772963759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </buttonConfiguration>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="20" verticalHuggingPriority="20" horizontalCompressionResistancePriority="10" verticalCompressionResistancePriority="16" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgq-P6-VOR">
                                                 <rect key="frame" x="346" y="18" width="21" height="22"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -48,13 +38,12 @@
                                                     <action selector="filterButtonPressed:" destination="Lay-zB-cnn" eventType="touchUpInside" id="kUo-5g-mV2"/>
                                                 </connections>
                                             </button>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="     Search" textAlignment="natural" minimumFontSize="17" background="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="zj7-tx-pc1">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="     Search" minimumFontSize="17" background="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="zj7-tx-pc1">
                                                 <rect key="frame" x="21" y="181" width="278" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" red="0.99781721830000003" green="0.432729274" blue="0.30632722379999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <color key="textColor" red="0.0057528293689999999" green="0.0" blue="0.20772963759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <attributedString key="attributedText"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -70,18 +59,30 @@
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
                                                 </state>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hot Sales" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBg-e0-8Lc">
-                                                <rect key="frame" x="8" y="223" width="115" height="35"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBg-e0-8Lc">
+                                                <rect key="frame" x="8" y="223" width="130" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="25"/>
-                                                <color key="textColor" red="0.0057528293689999999" green="0.0" blue="0.20772963759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Hot Sales">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.0057528293689999999" green="0.0" blue="0.20772963759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="25" name="MarkPro-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Best seller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCA-O7-yO2">
-                                                <rect key="frame" x="8" y="449" width="126" height="35"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCA-O7-yO2">
+                                                <rect key="frame" x="8" y="449" width="130" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="25"/>
-                                                <color key="textColor" red="0.0057528293689999999" green="0.0" blue="0.20772963759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Best seller">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.0057528293689999999" green="0.0" blue="0.20772963759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="25" name="MarkPro-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qj-0d-QuK">
@@ -93,7 +94,7 @@
                                                     <attributedString key="attributedTitle">
                                                         <fragment content="See more">
                                                             <attributes>
-                                                                <font key="NSFont" size="12" name="Helvetica"/>
+                                                                <font key="NSFont" size="12" name="MarkPro"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -110,7 +111,7 @@
                                                     <attributedString key="attributedTitle">
                                                         <fragment content="See more">
                                                             <attributes>
-                                                                <font key="NSFont" size="12" name="Helvetica"/>
+                                                                <font key="NSFont" size="12" name="MarkPro"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -130,7 +131,7 @@
                                                             <attributedString key="attributedTitle">
                                                                 <fragment content="• Explorer">
                                                                     <attributes>
-                                                                        <font key="NSFont" size="16" name="PingFangHK-Medium"/>
+                                                                        <font key="NSFont" size="16" name="MarkPro"/>
                                                                         <font key="NSOriginalFont" size="12" name="Helvetica"/>
                                                                     </attributes>
                                                                 </fragment>
@@ -309,11 +310,17 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYC-mR-nUv">
-                                                <rect key="frame" x="8" y="48" width="191" height="35"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYC-mR-nUv">
+                                                <rect key="frame" x="8" y="48" width="204" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="25"/>
-                                                <color key="textColor" red="0.0057528293689999999" green="0.0" blue="0.20772963759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Select Category">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.0057528293689999999" green="0.0" blue="0.20772963759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="25" name="MarkPro-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5FY-gz-D2a">
@@ -325,13 +332,40 @@
                                                     <attributedString key="attributedTitle">
                                                         <fragment content="view all">
                                                             <attributes>
-                                                                <font key="NSFont" size="16" name="PingFangHK-Regular"/>
+                                                                <color key="NSColor" red="0.99781721830000003" green="0.432729274" blue="0.30632722379999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" size="16" name="MarkPro"/>
                                                                 <font key="NSOriginalFont" size="12" name="Helvetica"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>
                                                     <color key="baseForegroundColor" red="0.99781721830000003" green="0.432729274" blue="0.30632722379999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Rs-XT-Xyw">
+                                                <rect key="frame" x="71" y="8" width="232" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="tintColor" red="0.99781721830000003" green="0.432729274" blue="0.30632722379999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="PinGeolocation" imagePadding="0.0">
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="small"/>
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Zihuatanejo, Gro ">
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0057528293689999999" green="0.0" blue="0.20772963759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" size="11" name="MarkPro"/>
+                                                                <font key="NSOriginalFont" size="11" name="MarkPro"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment content="⌵">
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0057528293689999999" green="0.0" blue="0.20772963759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                                                <font key="NSOriginalFont" size="11" name="MarkPro"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <color key="baseForegroundColor" red="0.0057528293689999999" green="0.0" blue="0.20772963759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </buttonConfiguration>
                                             </button>
                                         </subviews>
@@ -369,11 +403,16 @@
                     <connections>
                         <outlet property="LabelOfBestSellers" destination="xCA-O7-yO2" id="Auu-Bb-TXT"/>
                         <outlet property="LabelOfCategory" destination="hYC-mR-nUv" id="9tW-Xb-o2z"/>
+                        <outlet property="LabelOfGeo" destination="4Rs-XT-Xyw" id="nW3-s7-5YG"/>
                         <outlet property="LabelOfHotSales" destination="KBg-e0-8Lc" id="xjK-nc-j9C"/>
+                        <outlet property="buttonExplore" destination="R68-Ch-KjF" id="DDR-iJ-gcj"/>
                         <outlet property="closeFiler" destination="VUY-xS-gB9" id="mof-u8-2u6"/>
                         <outlet property="filter" destination="Z2K-Jy-LeL" id="bby-5j-JQJ"/>
                         <outlet property="filterButton" destination="fgq-P6-VOR" id="g6u-iK-iYN"/>
                         <outlet property="foter" destination="D3o-eX-MAh" id="DWz-KU-wio"/>
+                        <outlet property="labelSeeMore1" destination="v1N-pl-0bj" id="yea-wu-cIu"/>
+                        <outlet property="labelSeeMore2" destination="6qj-0d-QuK" id="PEA-TJ-lee"/>
+                        <outlet property="labelViewAll" destination="5FY-gz-D2a" id="erw-h9-IjK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5bP-BE-t19" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -750,7 +789,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="D2h-P2-Qd2"/>
+        <segue reference="Obc-oI-vfk"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Filter" width="166.66667175292969" height="166.66667175292969"/>

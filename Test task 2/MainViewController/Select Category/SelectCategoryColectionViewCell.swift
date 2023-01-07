@@ -20,7 +20,7 @@ class SelectCategoryCollectionViewCell: UICollectionViewCell {
     
     let nameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 12, weight: .bold)
+        label.font = UIFont.init(name: "MarkPro-Bold", size: 12)
         label.textColor = #colorLiteral(red: 0.005752829369, green: 0, blue: 0.2077296376, alpha: 1)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -36,10 +36,9 @@ class SelectCategoryCollectionViewCell: UICollectionViewCell {
         mainImageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         mainImageView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         mainImageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        //mainImageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         mainImageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 8/10).isActive = true
         
-        // MARK: - дорабоать центрирование текста и цвет текста первой иконки
+        
         nameLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 65).isActive = true
     }

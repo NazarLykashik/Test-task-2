@@ -11,11 +11,14 @@
 		C220324929644B3A00681C3C /* BestSellerCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C220324829644B3A00681C3C /* BestSellerCollectionViewController.swift */; };
 		C24CCE62296771F6006E71C8 /* ProductDetailsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24CCE61296771F6006E71C8 /* ProductDetailsCollectionViewController.swift */; };
 		C24CCE6429677215006E71C8 /* ProductDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24CCE6329677215006E71C8 /* ProductDetailCollectionViewCell.swift */; };
+		C24CCE67296A2425006E71C8 /* MARKPRO.OTF in Resources */ = {isa = PBXBuildFile; fileRef = C24CCE66296A2425006E71C8 /* MARKPRO.OTF */; };
+		C24CCE69296A2831006E71C8 /* MARKPRO-BOLD.OTF in Resources */ = {isa = PBXBuildFile; fileRef = C24CCE68296A2830006E71C8 /* MARKPRO-BOLD.OTF */; };
 		C27C2DBC2967273100DACF44 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27C2DBB2967273100DACF44 /* DetailViewController.swift */; };
 		C28AF28F295DC68F006429FB /* SelectCategoryColectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28AF28E295DC68F006429FB /* SelectCategoryColectionView.swift */; };
 		C28AF291295DDBCF006429FB /* SelectCategoryColectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28AF290295DDBCF006429FB /* SelectCategoryColectionViewCell.swift */; };
 		C28AF294295E6671006429FB /* HotSalesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28AF293295E6671006429FB /* HotSalesCollectionViewController.swift */; };
 		C28AF296295E684B006429FB /* HotSalesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28AF295295E684B006429FB /* HotSalesCollectionViewCell.swift */; };
+		C299FF49296A2F8C001C505B /* MARKPRO-HEAVY.OTF in Resources */ = {isa = PBXBuildFile; fileRef = C299FF48296A2F8B001C505B /* MARKPRO-HEAVY.OTF */; };
 		C2F7939A295F191100023BB7 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F79399295F191100023BB7 /* StorageManager.swift */; };
 		C2F7939F295F7CF800023BB7 /* ImageCashing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F7939E295F7CF800023BB7 /* ImageCashing.swift */; };
 		C2FC8AFE295C73250040E4A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FC8AFD295C73250040E4A5 /* AppDelegate.swift */; };
@@ -32,11 +35,14 @@
 		C220324829644B3A00681C3C /* BestSellerCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestSellerCollectionViewController.swift; sourceTree = "<group>"; };
 		C24CCE61296771F6006E71C8 /* ProductDetailsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsCollectionViewController.swift; sourceTree = "<group>"; };
 		C24CCE6329677215006E71C8 /* ProductDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		C24CCE66296A2425006E71C8 /* MARKPRO.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = MARKPRO.OTF; sourceTree = "<group>"; };
+		C24CCE68296A2830006E71C8 /* MARKPRO-BOLD.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MARKPRO-BOLD.OTF"; sourceTree = "<group>"; };
 		C27C2DBB2967273100DACF44 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C28AF28E295DC68F006429FB /* SelectCategoryColectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryColectionView.swift; sourceTree = "<group>"; };
 		C28AF290295DDBCF006429FB /* SelectCategoryColectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryColectionViewCell.swift; sourceTree = "<group>"; };
 		C28AF293295E6671006429FB /* HotSalesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSalesCollectionViewController.swift; sourceTree = "<group>"; };
 		C28AF295295E684B006429FB /* HotSalesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSalesCollectionViewCell.swift; sourceTree = "<group>"; };
+		C299FF48296A2F8B001C505B /* MARKPRO-HEAVY.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MARKPRO-HEAVY.OTF"; sourceTree = "<group>"; };
 		C2F79399295F191100023BB7 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		C2F7939E295F7CF800023BB7 /* ImageCashing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCashing.swift; sourceTree = "<group>"; };
 		C2FC8AFA295C73250040E4A5 /* Test task 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Test task 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +79,9 @@
 		C24CCE65296A23E7006E71C8 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				C299FF48296A2F8B001C505B /* MARKPRO-HEAVY.OTF */,
+				C24CCE68296A2830006E71C8 /* MARKPRO-BOLD.OTF */,
+				C24CCE66296A2425006E71C8 /* MARKPRO.OTF */,
 				C2FC8B06295C73270040E4A5 /* Assets.xcassets */,
 			);
 			path = Assets;
@@ -219,6 +228,9 @@
 			files = (
 				C2FC8B0A295C73270040E4A5 /* LaunchScreen.storyboard in Resources */,
 				C2FC8B07295C73270040E4A5 /* Assets.xcassets in Resources */,
+				C299FF49296A2F8C001C505B /* MARKPRO-HEAVY.OTF in Resources */,
+				C24CCE67296A2425006E71C8 /* MARKPRO.OTF in Resources */,
+				C24CCE69296A2831006E71C8 /* MARKPRO-BOLD.OTF in Resources */,
 				C2FC8B05295C73250040E4A5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

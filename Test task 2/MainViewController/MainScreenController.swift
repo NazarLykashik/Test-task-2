@@ -17,6 +17,11 @@ class MainScreenViewController: UIViewController {
     @IBOutlet var filter: UIView!
     @IBOutlet var filterButton: UIButton!
     @IBOutlet var closeFiler: UIButton!
+    @IBOutlet var LabelOfGeo: UIButton!
+    @IBOutlet var labelViewAll: UIButton!
+    @IBOutlet var labelSeeMore1: UIButton!
+    @IBOutlet var labelSeeMore2: UIButton!
+    @IBOutlet var buttonExplore: UIButton!
     
     private var SelectCategoryColectionView = SelectCategoryCollectionView()
     private var HotSalesColectionView = HotSalesCollectionView()
@@ -33,10 +38,19 @@ class MainScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        LabelOfGeo.titleLabel?.font  = UIFont.init(name: "MarkPro", size: 17)!
+        labelViewAll.titleLabel?.font  = UIFont.init(name: "MarkPro", size: 17)!
+        labelSeeMore1.titleLabel?.font  = UIFont.init(name: "MarkPro", size: 17)!
+        labelSeeMore2.titleLabel?.font  = UIFont.init(name: "MarkPro", size: 17)!
+        buttonExplore.titleLabel?.font  = UIFont.init(name: "MarkPro", size: 17)!
+        
+        
+        checkAvailableFonts()
         fechData()
         homeStore = StorageManager.shared.getHomeStore()
         bestSeller = StorageManager.shared.getBestSeller()
         
+                
         view.addSubview(SelectCategoryColectionView)
         
         SelectCategoryColectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
@@ -121,6 +135,13 @@ class MainScreenViewController: UIViewController {
                 print(error)
             }
         }.resume()
+    }
+    
+    func checkAvailableFonts(){
+        UIFont.familyNames.forEach { familyName in
+            let fontNames = UIFont.fontNames(forFamilyName: familyName)
+            print(familyName, fontNames)
+        }
     }
     
 }

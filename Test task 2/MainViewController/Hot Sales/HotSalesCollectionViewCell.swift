@@ -51,7 +51,7 @@ class HotSalesCollectionViewCell: UICollectionViewCell {
     
     let nameTitle: UILabel = {
         let title = UILabel()
-        title.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        title.font = UIFont.init(name: "MarkPro-Bold", size: 20)
         title.textColor = #colorLiteral(red: 0.9372549057, green: 0.9372549057, blue: 0.9372549057, alpha: 1)
         title.numberOfLines = 0
         title.translatesAutoresizingMaskIntoConstraints = false
@@ -60,7 +60,7 @@ class HotSalesCollectionViewCell: UICollectionViewCell {
     
     let subTitle: UILabel = {
         let title = UILabel()
-        title.font = UIFont.systemFont(ofSize: 10, weight: .regular)
+        title.font = UIFont.init(name: "MarkPro", size: 10)
         title.textColor = #colorLiteral(red: 0.9372549057, green: 0.9372549057, blue: 0.9372549057, alpha: 1)
         title.numberOfLines = 0
         title.translatesAutoresizingMaskIntoConstraints = false
@@ -100,7 +100,7 @@ class HotSalesCollectionViewCell: UICollectionViewCell {
         
         nameTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8).isActive = true
         nameTitle.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        nameTitle.topAnchor.constraint(equalTo: topAnchor, constant: 90).isActive = true
+        nameTitle.topAnchor.constraint(equalTo: topAnchor, constant: 85).isActive = true
         
         subTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8).isActive = true
         subTitle.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true

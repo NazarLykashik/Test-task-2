@@ -57,7 +57,7 @@ class BestSellerCollectionViewCell: UICollectionViewCell {
     
     let phoneName: UILabel = {
         let title = UILabel()
-        title.font = UIFont.systemFont(ofSize: 13, weight: .regular)
+        title.font = UIFont.init(name: "MarkPro", size: 12)
         title.textColor = #colorLiteral(red: 0.005752829369, green: 0, blue: 0.2077296376, alpha: 1)
         title.numberOfLines = 0
         title.translatesAutoresizingMaskIntoConstraints = false
@@ -66,7 +66,7 @@ class BestSellerCollectionViewCell: UICollectionViewCell {
     
     let price: UILabel = {
         let value = UILabel()
-        value.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        value.font = UIFont.init(name: "MarkPro-Bold", size: 20)
         value.textColor = #colorLiteral(red: 0.005752829369, green: 0, blue: 0.2077296376, alpha: 1)
         value.numberOfLines = 0
         value.translatesAutoresizingMaskIntoConstraints = false
@@ -75,7 +75,7 @@ class BestSellerCollectionViewCell: UICollectionViewCell {
     
     let old_price: UILabel = {
         let value = UILabel()
-        value.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+        value.font = UIFont.init(name: "MarkPro", size: 15)
         value.textColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         value.numberOfLines = 0
         value.translatesAutoresizingMaskIntoConstraints = false
