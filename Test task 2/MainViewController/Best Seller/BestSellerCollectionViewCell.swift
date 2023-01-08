@@ -9,7 +9,7 @@ import UIKit
 
 class BestSellerCollectionViewCell: UICollectionViewCell {
     
-    static let reuseId = "HotSalesCollectionViewCell"
+    static let reuseId = "BestSellerCell"
     
     
     

@@ -13,6 +13,8 @@ class StorageManager{
     
     private var homeStore: [HomeStore] = []
     private var bestSeller: [BestSeller] = []
+    private var card: [Card] = []
+    private var basket: [Basket] = []
     private let defaults = UserDefaults.standard
     
     func getHomeStore() -> [HomeStore]{
@@ -50,6 +52,24 @@ class StorageManager{
     func saveBestSeller(_ store: [BestSeller]){
         guard let bestSellerEncoded = try? JSONEncoder().encode(store) else {return}
         defaults.set(bestSellerEncoded, forKey: "savedBestSeller")
+    }
+    
+    func getBasket() -> [Basket]{
+        
+        if let data = UserDefaults.standard.data(forKey: "savedBasket") {
+            do {
+                let decoder = JSONDecoder()
+                let basket = try decoder.decode([Basket].self, from: data)
+                return basket
+            } catch {
+                print("Unable to Decode places (\(error))")
+            }
+        }
+        return basket
+    }
+    func saveBasket(_ basket: [Basket]){
+        guard let basketEncoded = try? JSONEncoder().encode(basket) else {return}
+        defaults.set(basketEncoded, forKey: "savedBasket")
     }
 }
 

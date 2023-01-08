@@ -16,7 +16,7 @@ class DetailCollectionView: UICollectionView, UICollectionViewDelegate, UICollec
     init() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-//        layout. =
+
 
         super.init(frame: .zero, collectionViewLayout: layout)
         

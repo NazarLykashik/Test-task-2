@@ -46,6 +46,19 @@ struct ProductDetails: Decodable, Hashable{
     let title: String?
 }
 
+struct Card: Decodable, Encodable{
+    let basket:[Basket]?
+    let delivery: String?
+    let id: String?
+    let total: Int?
+}
+
+struct Basket: Decodable, Encodable{
+    let id: Int?
+    let images: String?
+    let price: Int?
+    let title: String?
+}
 
 
 // MARK: - Select Category
