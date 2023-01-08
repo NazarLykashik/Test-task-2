@@ -38,6 +38,8 @@ class MainScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        filter.makeShadow()
+        
         LabelOfGeo.titleLabel?.font  = UIFont.init(name: "MarkPro", size: 17)!
         labelViewAll.titleLabel?.font  = UIFont.init(name: "MarkPro", size: 17)!
         labelSeeMore1.titleLabel?.font  = UIFont.init(name: "MarkPro", size: 17)!

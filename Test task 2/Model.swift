@@ -16,13 +16,6 @@ struct HomeStore: Codable{
     let is_buy: Bool?
     
 }
-//struct ConstantsHomeStore{
-//    static let leftDistanceToView: CGFloat = 0
-//    static let rightDistanceToView: CGFloat = 0
-//    static let galleryMinimumLineSpacing: CGFloat = 0
-//    static let galleryItemWidth = 200
-//
-//}
 
 struct BestSeller: Codable{
     let id: Int?
@@ -76,6 +69,17 @@ struct SelectCategoryModel{
         let sevenItem = SelectCategoryModel(mainImage: UIImage(named: "BooksInBar")!,
                                      itemName: "Books")
         return [firstItem, secondItem, thirdItem, fouthItem, fiveItem, sixItem, sevenItem]
+    }
+}
+
+struct DetailModel{
+    var mainImage: UIImage
+    
+    static func fetchDetails() -> [DetailModel] {
+        let firstItem = DetailModel(mainImage: UIImage(named: "Image1")!)
+        let secondItem = DetailModel(mainImage: UIImage(named: "Image2")!)
+        
+        return [firstItem, secondItem]
     }
 }
 struct Constants{

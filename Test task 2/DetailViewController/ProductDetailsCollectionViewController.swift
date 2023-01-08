@@ -7,49 +7,49 @@
 
 import UIKit
 
-private let reuseIdentifier = "ProductdetailCell"
-
-class ProductDetailsCollectionViewController: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class DetailCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
 
 
 
-    init(){
+    var cells = [DetailModel]()
+
+    init() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        super.init(frame: .zero, collectionViewLayout: layout)
+//        layout. =
 
-        backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.9372549057, blue: 0.9372549057, alpha: 1)
+        super.init(frame: .zero, collectionViewLayout: layout)
+        
+        backgroundColor = #colorLiteral(red: 0.1215686277, green: 0.01176470611, blue: 0.4235294163, alpha: 1)
         delegate = self
         dataSource = self
-
-        register(ProductDetailCollectionViewCell.self, forCellWithReuseIdentifier: ProductDetailCollectionViewCell.reuseId)
+        
+        register(DetailCollectionViewCell.self, forCellWithReuseIdentifier: DetailCollectionViewCell.reuseId)
+        
         translatesAutoresizingMaskIntoConstraints = false
-        layout.minimumLineSpacing = 10
-        contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
+    }
 
-        showsVerticalScrollIndicator = false
-        showsHorizontalScrollIndicator = false
-        isPagingEnabled = true
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return cells.count
+    }
+    
+    func set(cells: [DetailModel]){
+        self.cells = cells
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = dequeueReusableCell(withReuseIdentifier: DetailCollectionViewCell.reuseId, for: indexPath) as! DetailCollectionViewCell
+        cell.mainImageView.image = cells[indexPath.row].mainImage
+        return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 270, height: 270)
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-     return 2
-    }
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = dequeueReusableCell(withReuseIdentifier: HotSalesCollectionViewCell.reuseId, for: indexPath) as! ProductDetailCollectionViewCell
-        //let cellsHotSale = cellsHotSales[indexPath.row]
-        return cell
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 355, height: 180)
-    }
-
-
 }
-
-
 
