@@ -67,7 +67,7 @@ class CardViewController: UIViewController, UICollectionViewDataSource, UICollec
                 
                 DispatchQueue.main.async {
                     self.totalPriceLabel.text = "$ \(Int(card.total ?? 0))"
-                    self.deliveryLabel.text = card.delivery
+                    self.deliveryPriceLabel.text = card.delivery
                     self.collectionView.reloadData()
 
                 }
