@@ -8,12 +8,16 @@
 import UIKit
 
 
-class CardViewController: UIViewController {
+class CardViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    @IBOutlet var mainLabel: UILabel!
     @IBOutlet var totalPriceLabel: UILabel!
-    
+    @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var deliveryPriceLabel: UILabel!
+    @IBOutlet var addAdressLabel: UILabel!
+    @IBOutlet var totalLabel: UILabel!
     @IBOutlet var deliveryLabel: UILabel!
-    
-    private var cartCollectionView = CartCollectionView()
+    @IBOutlet var checoutBotton: UIButton!
     
     
     let jsonUrl = "https://run.mocky.io/v3/53539a72-3c5f-4f30-bbb1-6ca10d42c149"
@@ -22,26 +26,34 @@ class CardViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        fechData()
+        
+        totalPriceLabel.font = UIFont.init(name: "MarkPro-Bold", size: 15)
+        totalLabel.font = UIFont.init(name: "MarkPro", size: 15)
+        deliveryPriceLabel.font = UIFont.init(name: "MarkPro-Bold", size: 15)
+        deliveryLabel.font = UIFont.init(name: "MarkPro", size: 15)
+        mainLabel.font = UIFont.init(name: "MarkPro-Bold", size: 40)
+        addAdressLabel.font = UIFont.init(name: "MarkPro", size: 17)
+        checoutBotton.titleLabel!.font = UIFont.init(name: "MarkPro", size: 24)
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
         
         basket = StorageManager.shared.getBasket()
-        view.addSubview(cartCollectionView)
-
-
+        
+        fechData()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return basket.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CardCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCollectionViewCell", for: indexPath) as! CardCollectionViewCell
         let cells = basket[indexPath.row]
         cell.configure(with: cells)
         return cell
     }
-
+    
     func fechData(){
         guard let url = URL(string: jsonUrl) else {return}
         URLSession.shared.dataTask(with: url) { (data, _, _) in
@@ -56,7 +68,7 @@ class CardViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.totalPriceLabel.text = "$ \(Int(card.total ?? 0))"
                     self.deliveryLabel.text = card.delivery
-                    self.cartCollectionView.reloadData()
+                    self.collectionView.reloadData()
 
                 }
             }
@@ -65,7 +77,4 @@ class CardViewController: UIViewController {
             }
         }.resume()
     }
-
-
-
 }

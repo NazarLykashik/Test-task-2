@@ -7,9 +7,10 @@
 
 import UIKit
 
-class MainScreenViewController: UIViewController {
+class MainScreenViewController: UIViewController, UIGestureRecognizerDelegate {
     
     
+    @IBOutlet var mainView: UIView!
     @IBOutlet var LabelOfCategory: UILabel!
     @IBOutlet var LabelOfHotSales: UILabel!
     @IBOutlet var LabelOfBestSellers: UILabel!
@@ -21,6 +22,7 @@ class MainScreenViewController: UIViewController {
     @IBOutlet var labelViewAll: UIButton!
     @IBOutlet var labelSeeMore1: UIButton!
     @IBOutlet var labelSeeMore2: UIButton!
+    @IBOutlet var searchTextField: UITextField!
     @IBOutlet var buttonExplore: UIButton!
     
     private var SelectCategoryColectionView = SelectCategoryCollectionView()
@@ -34,11 +36,31 @@ class MainScreenViewController: UIViewController {
     
     private let jsonUrl = "https://run.mocky.io/v3/654bd15e-b121-49ba-a588-960956b15175"
     
+    let findTextFieldImageView = UIImageView(frame: CGRect(x: 8.0, y: 10.0, width: 20.0, height: 20.0))
+    let image = UIImage(named: "SearchImage")
+    let findTextFieldView = UIView(frame: CGRect(x: 0, y: 0, width: 38, height: 40))
+
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         filter.makeShadow()
+        
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(self.hideKeyboardOnSwipeDown))
+        swipeDown.delegate = self
+        swipeDown.direction =  UISwipeGestureRecognizer.Direction.down
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(self.hideKeyboardOnSwipeDown))
+        swipeUp.delegate = self
+        swipeUp.direction =  UISwipeGestureRecognizer.Direction.up
+        self.mainView.addGestureRecognizer(swipeDown)
+        self.mainView.addGestureRecognizer(swipeUp)
+        
+        findTextFieldImageView.image = image
+        findTextFieldImageView.contentMode = .scaleAspectFit
+        findTextFieldView.addSubview(findTextFieldImageView)
+        searchTextField.leftViewMode = UITextField.ViewMode.always
+        searchTextField.leftView = findTextFieldView
         
         LabelOfGeo.titleLabel?.font  = UIFont.init(name: "MarkPro", size: 17)!
         labelViewAll.titleLabel?.font  = UIFont.init(name: "MarkPro", size: 17)!
@@ -58,18 +80,20 @@ class MainScreenViewController: UIViewController {
         SelectCategoryColectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         SelectCategoryColectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         SelectCategoryColectionView.topAnchor.constraint(equalTo: LabelOfCategory.bottomAnchor, constant: 5).isActive = true
-        SelectCategoryColectionView.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        SelectCategoryColectionView.heightAnchor.constraint(equalToConstant: 105).isActive = true
         
         SelectCategoryColectionView.set(cells: SelectCategoryModel.fetchModel())
         
         
         view.addSubview(HotSalesColectionView)
         
+        SelectCategoryColectionView.handleChangeCategory = handleChangeCategory
+        
         HotSalesColectionView.handleClick = {
-            self.handleClick()
+            self.openProductDetails()
         }
         BestSellersCollectionView.handleClick = {
-            self.handleClick()
+            self.openProductDetails()
         }
             
             HotSalesColectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
@@ -93,13 +117,24 @@ class MainScreenViewController: UIViewController {
         }
     
         
-        func handleClick(){
+        func openProductDetails(){
             let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
             let secondVC = storyboard.instantiateViewController(identifier: "detailViewController") as! DetailViewController
             
             self.present(secondVC, animated: true, completion: nil)
         }
 
+    func handleChangeCategory (category: Category) {
+        if category != Category.Phones {
+            HotSalesColectionView.isHidden = true;
+            BestSellersCollectionView.isHidden = true;
+            
+        }
+        else {
+            HotSalesColectionView.isHidden = false;
+            BestSellersCollectionView.isHidden = false;
+        }
+    }
     
 
     
@@ -146,5 +181,11 @@ class MainScreenViewController: UIViewController {
         }
     }
     
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+            return true
+        }
+    @objc func hideKeyboardOnSwipeDown() {
+            view.endEditing(true)
+        }
 }
 

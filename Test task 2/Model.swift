@@ -60,28 +60,38 @@ struct Basket: Decodable, Encodable{
     let title: String?
 }
 
+enum Category: String {
+    case Phones = "Phones"
+    case Computer = "Computer"
+    case Books = "Books"
+    case Health = "Health"
+}
+
+struct SelectCategoryItem {
+    let name: Category
+    let item: SelectCategoryModel
+}
 
 // MARK: - Select Category
 struct SelectCategoryModel{
     var mainImage: UIImage
     var itemName: String
     
-    static func fetchModel() -> [SelectCategoryModel] {
-        let firstItem = SelectCategoryModel(mainImage: UIImage(named: "PhoneInBar")!,
+    static func fetchModel() -> [SelectCategoryItem] {
+        let firstItem = SelectCategoryModel(mainImage: UIImage(named: "GroupPhone")!,
                                      itemName: "Phones")
-        let secondItem = SelectCategoryModel(mainImage: UIImage(named: "ComputerInBar")!,
+        let secondItem = SelectCategoryModel(mainImage: UIImage(named: "Vectorcomputer")!,
                                       itemName: "Computer")
-        let thirdItem = SelectCategoryModel(mainImage: UIImage(named: "HeartInBar")!,
+        let thirdItem = SelectCategoryModel(mainImage: UIImage(named: "VectorHealth")!,
                                      itemName: "Health")
-        let fouthItem = SelectCategoryModel(mainImage: UIImage(named: "BooksInBar")!,
+        let fouthItem = SelectCategoryModel(mainImage: UIImage(named: "VectorBooks")!,
                                      itemName: "Books")
-        let fiveItem = SelectCategoryModel(mainImage: UIImage(named: "ComputerInBar")!,
-                                      itemName: "Computer")
-        let sixItem = SelectCategoryModel(mainImage: UIImage(named: "HeartInBar")!,
-                                     itemName: "Health")
-        let sevenItem = SelectCategoryModel(mainImage: UIImage(named: "BooksInBar")!,
-                                     itemName: "Books")
-        return [firstItem, secondItem, thirdItem, fouthItem, fiveItem, sixItem, sevenItem]
+        return [
+            SelectCategoryItem( name: Category.Phones, item: firstItem),
+            SelectCategoryItem( name: Category.Computer, item:  secondItem),
+            SelectCategoryItem( name: Category.Books, item: fouthItem),
+            SelectCategoryItem( name: Category.Health, item: thirdItem),
+        ]
     }
 }
 

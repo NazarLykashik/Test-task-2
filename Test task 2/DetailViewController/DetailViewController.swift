@@ -40,7 +40,7 @@ class DetailViewController: UIViewController {
     var compacity = [String]()
     var color = [String]()
     var pictire = [String]()
-
+//    var capacityButtons = []
     
 
     private let jsonUrl = "https://run.mocky.io/v3/6c14c560-15c6-4248-b9d2-b4508df7d4f5"
@@ -66,16 +66,13 @@ class DetailViewController: UIViewController {
         capacity1.backgroundColor = #colorLiteral(red: 0.9978172183, green: 0.432729274, blue: 0.3063272238, alpha: 1)
         color2.titleLabel?.isHidden = true
         
-        star1.image = #imageLiteral(resourceName: "Star ")
-        star2.image = #imageLiteral(resourceName: "Star ")
-        star3.image = #imageLiteral(resourceName: "Star ")
-        star4.image = #imageLiteral(resourceName: "Star ")
-        star5.image = #imageLiteral(resourceName: "Star ")
+        star1.image = #imageLiteral(resourceName: "StarUnselected")
+        star2.image = #imageLiteral(resourceName: "StarUnselected")
+        star3.image = #imageLiteral(resourceName: "StarUnselected")
+        star4.image = #imageLiteral(resourceName: "StarUnselected")
+        star5.image = #imageLiteral(resourceName: "StarUnselected")
         
         fechData()
-
-
-
         
     }
     
@@ -106,12 +103,6 @@ class DetailViewController: UIViewController {
         
     }
     
-    
-    
-    
-    
-    
-    
     func fechData(){
         guard let url = URL(string: jsonUrl) else {return}
         URLSession.shared.dataTask(with: url) { (data, _, _) in
@@ -124,18 +115,34 @@ class DetailViewController: UIViewController {
                 self.pictire = phone.images ?? ["nil"]
                 
                 DispatchQueue.main.async {
+                    
+//                    let capacities = ["black", "white"];
+//
+//                    for capacity in capacities{
+//                    
+//                      print(capacity) // 128 gb, 138 gb
+//                        
+//                        contt button = new Button();
+//                        button.backgroundRefresh;
+//                    }
+                    
                     self.capacity1.setTitle("\(self.compacity[0]) GB", for: .normal)
                     self.capacity2.setTitle("\(self.compacity[1]) GB", for: .normal)
+                    
                     self.color1.layer.backgroundColor = (self.hexStringToUIColor(hex: self.color[0])).cgColor
                     self.color2.layer.backgroundColor = (self.hexStringToUIColor(hex: self.color[1])).cgColor
+                    
                     self.isFavorite = phone.isFavorites ?? false
                     self.fafotiteCheck()
+                    
                     self.cpuLabel.text = phone.CPU
                     self.cameraLabel.text = phone.camera
                     self.ssdMemory.text = phone.ssd
                     self.sdMemory.text = phone.sd
                     self.titleLabel.text = phone.title
+                    
                     self.raiting(starRaitingCount: phone.rating ?? 0)
+                    
                     self.addToBusketButton.titleLabel?.text = ("Add to Cart $ \(phone.price ?? 0)")
                 }
             }
@@ -146,61 +153,29 @@ class DetailViewController: UIViewController {
     }
     
     private func raiting (starRaitingCount: Float){
-        switch starRaitingCount{
-        case 0:
-            star1.image = #imageLiteral(resourceName: "StarUnselected")
-            star2.image = #imageLiteral(resourceName: "StarUnselected")
-            star3.image = #imageLiteral(resourceName: "StarUnselected")
-            star4.image = #imageLiteral(resourceName: "StarUnselected")
-            star5.image = #imageLiteral(resourceName: "StarUnselected")
-            break
-        case 0.5:
-            star1.image = #imageLiteral(resourceName: "Star0.5")
-            star2.image = #imageLiteral(resourceName: "StarUnselected")
-            star3.image = #imageLiteral(resourceName: "StarUnselected")
-            star4.image = #imageLiteral(resourceName: "StarUnselected")
-            star5.image = #imageLiteral(resourceName: "StarUnselected")
-            break
-        case 1:
-            star2.image = #imageLiteral(resourceName: "StarUnselected")
-            star3.image = #imageLiteral(resourceName: "StarUnselected")
-            star4.image = #imageLiteral(resourceName: "StarUnselected")
-            star5.image = #imageLiteral(resourceName: "StarUnselected")
-            break
-        case 1.5:
-            star2.image = #imageLiteral(resourceName: "Star0.5")
-            star3.image = #imageLiteral(resourceName: "StarUnselected")
-            star4.image = #imageLiteral(resourceName: "StarUnselected")
-            star5.image = #imageLiteral(resourceName: "StarUnselected")
-            break
-        case 2:
-            star3.image = #imageLiteral(resourceName: "StarUnselected")
-            star4.image = #imageLiteral(resourceName: "StarUnselected")
-            star5.image = #imageLiteral(resourceName: "StarUnselected")
-            break
-        case 2.5:
-            star3.image = #imageLiteral(resourceName: "Star0.5")
-            star4.image = #imageLiteral(resourceName: "StarUnselected")
-            star5.image = #imageLiteral(resourceName: "StarUnselected")
-            break
-        case 3:
-            star4.image = #imageLiteral(resourceName: "StarUnselected")
-            star5.image = #imageLiteral(resourceName: "StarUnselected")
-            break
-        case 3.5:
-            star4.image = #imageLiteral(resourceName: "Star0.5")
-            star5.image = #imageLiteral(resourceName: "StarUnselected")
-            break
-        case 4:
-            star5.image = #imageLiteral(resourceName: "StarUnselected")
-            break
-        case 4.5:
-            star5.image = #imageLiteral(resourceName: "Star0.5")
-            break
-        default:
-            return
+        
+        if( starRaitingCount > 4) {
+            star5.image = starRaitingCount == 4.5 ? #imageLiteral(resourceName: "Star0.5") : #imageLiteral(resourceName: "Star ")
         }
-
+        
+        if( starRaitingCount > 3) {
+            star4.image = starRaitingCount == 3.5 ? #imageLiteral(resourceName: "Star0.5") : #imageLiteral(resourceName: "Star ")
+        }
+        
+        if( starRaitingCount > 2) {
+            star3.image = starRaitingCount == 2.5 ? #imageLiteral(resourceName: "Star0.5") : #imageLiteral(resourceName: "Star ")
+            
+        }
+        
+        if( starRaitingCount > 1) {
+            star2.image = starRaitingCount == 1.5 ? #imageLiteral(resourceName: "Star0.5") : #imageLiteral(resourceName: "Star ")
+        }
+        
+        if( starRaitingCount > 0) {
+            star1.image = starRaitingCount == 0.5 ? #imageLiteral(resourceName: "Star0.5") : #imageLiteral(resourceName: "Star ")
+        }
+        
+        
     }
     
     func hexStringToUIColor (hex:String) -> UIColor {

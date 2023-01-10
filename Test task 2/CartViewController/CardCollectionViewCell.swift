@@ -29,13 +29,16 @@ class CardCollectionViewCell: UICollectionViewCell {
     func configure(with basket: Basket){
         titleLabel.text = basket.title
         priceLabel.text = "$ \(Int(basket.price ?? 0))"
+        titleLabel.font = UIFont.init(name: "MarkPro", size: 17)
+        priceLabel.font = UIFont.init(name: "MarkPro", size: 17)
+        countLabel.font = UIFont.init(name: "MarkPro", size: 17)
         
 
         
         DispatchQueue.global().async {
             guard let imageUrl = URL(string: basket.images!) else {return}
             guard let imageData = try? Data(contentsOf: imageUrl) else {return}
-            
+
             DispatchQueue.main.async {
                 self.imageView.image = UIImage(data: imageData)
             }

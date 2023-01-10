@@ -43,6 +43,7 @@ class DetailCollectionView: UICollectionView, UICollectionViewDelegate, UICollec
         return cell
     }
 
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 270, height: 270)
     }

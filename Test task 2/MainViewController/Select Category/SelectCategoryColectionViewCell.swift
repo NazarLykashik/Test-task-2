@@ -14,13 +14,17 @@ class SelectCategoryCollectionViewCell: UICollectionViewCell {
     let mainImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .center
+        imageView.layer.backgroundColor = #colorLiteral(red: 0.9725490212, green: 0.9725491405, blue: 0.9725490212, alpha: 1)
+        imageView.layer.cornerRadius = 43
+        imageView.tintColor = UIColor(red: 0.702, green: 0.702, blue: 0.765, alpha: 1)
+        
         return imageView
     }()
     
     let nameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.init(name: "MarkPro-Bold", size: 12)
+        label.font = UIFont.init(name: "MarkPro-Bold", size: 14)
         label.textColor = #colorLiteral(red: 0.005752829369, green: 0, blue: 0.2077296376, alpha: 1)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -40,7 +44,7 @@ class SelectCategoryCollectionViewCell: UICollectionViewCell {
         
         
         nameLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 65).isActive = true
+        nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 85).isActive = true
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implamented")

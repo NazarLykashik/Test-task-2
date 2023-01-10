@@ -10,8 +10,10 @@ import UIKit
 
 class SelectCategoryCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    var cells: [SelectCategoryModel] = []
-    
+
+    var cells: [SelectCategoryItem] = []
+    var selectedIndex: IndexPath?
+    var handleChangeCategory: ((_: Category) -> Void)? = nil
     init(){
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -29,7 +31,7 @@ class SelectCategoryCollectionView: UICollectionView, UICollectionViewDelegate, 
         showsHorizontalScrollIndicator = false
     }
     
-    func set(cells: [SelectCategoryModel]){
+    func set(cells: [SelectCategoryItem]){
         self.cells = cells
     }
     
@@ -38,14 +40,35 @@ class SelectCategoryCollectionView: UICollectionView, UICollectionViewDelegate, 
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = dequeueReusableCell(withReuseIdentifier: SelectCategoryCollectionViewCell.reuseId, for: indexPath) as! SelectCategoryCollectionViewCell
-        cell.mainImageView.image = cells[indexPath.row].mainImage
-        cell.nameLabel.text = cells[indexPath.row].itemName
+        let cell = dequeueReusableCell(withReuseIdentifier: SelectCategoryCollectionViewCell.reuseId, for: indexPath) as!
+            SelectCategoryCollectionViewCell
+        if self.selectedIndex == nil {
+            self.selectedIndex = indexPath
+        }
+        if indexPath == self.selectedIndex  {
+            cell.mainImageView.image = cells[indexPath.row].item.mainImage
+            cell.mainImageView.backgroundColor = #colorLiteral(red: 0.9978172183, green: 0.432729274, blue: 0.3063272238, alpha: 1)
+            cell.mainImageView.tintColor = #colorLiteral(red: 0.9725490212, green: 0.9725491405, blue: 0.9725490212, alpha: 1)
+            cell.nameLabel.textColor = #colorLiteral(red: 0.9978172183, green: 0.432729274, blue: 0.3063272238, alpha: 1)
+            cell.nameLabel.text = cells[indexPath.row].item.itemName
+        } else {
+            cell.mainImageView.image = cells[indexPath.row].item.mainImage
+            cell.nameLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            cell.mainImageView.backgroundColor = #colorLiteral(red: 0.9725490212, green: 0.9725491405, blue: 0.9725490212, alpha: 1)
+            cell.mainImageView.tintColor = UIColor(red: 0.702, green: 0.702, blue: 0.765, alpha: 1)
+            cell.nameLabel.text = cells[indexPath.row].item.itemName
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 80, height: 80)
+        return CGSize(width: 86, height: 103)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.selectedIndex = indexPath;
+        collectionView.reloadData()
+        handleChangeCategory?(cells[indexPath.row].name);
     }
     
     required init?(coder: NSCoder) {

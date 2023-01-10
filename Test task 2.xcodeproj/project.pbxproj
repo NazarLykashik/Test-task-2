@@ -21,7 +21,6 @@
 		C299FF49296A2F8C001C505B /* MARKPRO-HEAVY.OTF in Resources */ = {isa = PBXBuildFile; fileRef = C299FF48296A2F8B001C505B /* MARKPRO-HEAVY.OTF */; };
 		C299FF4E296B19C6001C505B /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C299FF4D296B19C6001C505B /* CardCollectionViewCell.swift */; };
 		C299FF50296B1E83001C505B /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C299FF4F296B1E83001C505B /* CardViewController.swift */; };
-		C299FF52296B6700001C505B /* CartCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C299FF51296B6700001C505B /* CartCollectionViewController.swift */; };
 		C2F7939A295F191100023BB7 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F79399295F191100023BB7 /* StorageManager.swift */; };
 		C2F7939F295F7CF800023BB7 /* ImageCashing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F7939E295F7CF800023BB7 /* ImageCashing.swift */; };
 		C2FC8AFE295C73250040E4A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FC8AFD295C73250040E4A5 /* AppDelegate.swift */; };
@@ -48,7 +47,6 @@
 		C299FF48296A2F8B001C505B /* MARKPRO-HEAVY.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MARKPRO-HEAVY.OTF"; sourceTree = "<group>"; };
 		C299FF4D296B19C6001C505B /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		C299FF4F296B1E83001C505B /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
-		C299FF51296B6700001C505B /* CartCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCollectionViewController.swift; sourceTree = "<group>"; };
 		C2F79399295F191100023BB7 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		C2F7939E295F7CF800023BB7 /* ImageCashing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCashing.swift; sourceTree = "<group>"; };
 		C2FC8AFA295C73250040E4A5 /* Test task 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Test task 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,7 +134,6 @@
 			isa = PBXGroup;
 			children = (
 				C299FF4F296B1E83001C505B /* CardViewController.swift */,
-				C299FF51296B6700001C505B /* CartCollectionViewController.swift */,
 				C299FF4D296B19C6001C505B /* CardCollectionViewCell.swift */,
 			);
 			path = CartViewController;
@@ -261,7 +258,6 @@
 			files = (
 				C2FC8B14295C7B170040E4A5 /* Model.swift in Sources */,
 				C28AF291295DDBCF006429FB /* SelectCategoryColectionViewCell.swift in Sources */,
-				C299FF52296B6700001C505B /* CartCollectionViewController.swift in Sources */,
 				C220324729644B1800681C3C /* BestSellerCollectionViewCell.swift in Sources */,
 				C28AF296295E684B006429FB /* HotSalesCollectionViewCell.swift in Sources */,
 				C2FC8B02295C73250040E4A5 /* MainScreenController.swift in Sources */,

@@ -17,6 +17,7 @@ class StorageManager{
     private var basket: [Basket] = []
     private let defaults = UserDefaults.standard
     
+    
     func getHomeStore() -> [HomeStore]{
         
         if let data = UserDefaults.standard.data(forKey: "savedHomeStore") {
