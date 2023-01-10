@@ -46,6 +46,10 @@ struct ProductDetails: Decodable, Hashable{
     let title: String?
 }
 
+struct Images: Decodable, Encodable{
+    let images: String?
+}
+
 struct Card: Decodable, Encodable{
     let basket:[Basket]?
     let delivery: String?
@@ -95,16 +99,6 @@ struct SelectCategoryModel{
     }
 }
 
-struct DetailModel{
-    var mainImage: UIImage
-    
-    static func fetchDetails() -> [DetailModel] {
-        let firstItem = DetailModel(mainImage: UIImage(named: "Image1")!)
-        let secondItem = DetailModel(mainImage: UIImage(named: "Image2")!)
-        
-        return [firstItem, secondItem]
-    }
-}
 struct Constants{
     
     static let leftDistanceToView: CGFloat = 8

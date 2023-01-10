@@ -22,7 +22,10 @@ class DetailViewController: UIViewController {
     @IBOutlet var addToBusketButton: UIButton!
     @IBOutlet var productDetailLabel: UILabel!
     @IBOutlet var favariteButton: UIButton!
-    
+    @IBOutlet var shopLabel: UIButton!
+    @IBOutlet var detailLabel: UIButton!
+    @IBOutlet var feachersLabel: UIButton!
+    @IBOutlet var colorAndCapacityLabel: UILabel!
     
     @IBOutlet var star1: UIImageView!
     @IBOutlet var star2: UIImageView!
@@ -40,7 +43,6 @@ class DetailViewController: UIViewController {
     var compacity = [String]()
     var color = [String]()
     var pictire = [String]()
-//    var capacityButtons = []
     
 
     private let jsonUrl = "https://run.mocky.io/v3/6c14c560-15c6-4248-b9d2-b4508df7d4f5"
@@ -51,20 +53,31 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         detailView.makeShadow()
-
         
+        productDetailLabel.font = UIFont.init(name: "MarkPro", size: 18)
+        titleLabel.font = UIFont.init(name: "MarkPro", size: 20)
+        shopLabel.titleLabel?.font = UIFont.init(name: "MarkPro-Bold", size: 18)!
+        detailLabel.titleLabel?.font = UIFont.init(name: "MarkPro-Bold", size: 18)!
+        feachersLabel.titleLabel?.font = UIFont.init(name: "MarkPro-Bold", size: 18)!
+        cpuLabel.font = UIFont.init(name: "MarkPro", size: 12)
+        cameraLabel.font = UIFont.init(name: "MarkPro", size: 12)
+        sdMemory.font = UIFont.init(name: "MarkPro", size: 12)
+        ssdMemory.font = UIFont.init(name: "MarkPro", size: 12)
+        colorAndCapacityLabel.font = UIFont.init(name: "MarkPro", size: 17)
+        
+        
+        capacity1.titleLabel?.font = UIFont.init(name: "MarkPro", size: 18)
+        capacity2.titleLabel?.font = UIFont.init(name: "MarkPro", size: 18)
+
         view.addSubview(detailCollectionView)
         
-        detailCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        detailCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 70).isActive = true
         detailCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         detailCollectionView.topAnchor.constraint(equalTo: productDetailLabel.bottomAnchor, constant: 10).isActive = true
         detailCollectionView.heightAnchor.constraint(equalToConstant: 270).isActive = true
         
-        detailCollectionView.set(cells: DetailModel.fetchDetails())
-        
         
         capacity1.backgroundColor = #colorLiteral(red: 0.9978172183, green: 0.432729274, blue: 0.3063272238, alpha: 1)
-        color2.titleLabel?.isHidden = true
         
         star1.image = #imageLiteral(resourceName: "StarUnselected")
         star2.image = #imageLiteral(resourceName: "StarUnselected")
@@ -81,22 +94,22 @@ class DetailViewController: UIViewController {
         capacity1.backgroundColor = #colorLiteral(red: 0.9978172183, green: 0.432729274, blue: 0.3063272238, alpha: 1)
         
         capacity1.setTitleColor(.white, for: .normal)
-        capacity2.setTitleColor(.black, for: .normal)
-        
-        
+        capacity2.setTitleColor(.lightGray, for: .normal)
     }
     
     @IBAction func capacity2Select(_ sender: Any) {
         capacity1.layer.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         capacity2.layer.backgroundColor = #colorLiteral(red: 0.9978172183, green: 0.432729274, blue: 0.3063272238, alpha: 1)
         
-        capacity1.setTitleColor(.black, for: .normal)
+        capacity1.setTitleColor(.lightGray, for: .normal)
         capacity2.setTitleColor(.white, for: .normal)
     }
+    
     @IBAction func color1Select(_ sender: Any) {
         color1.titleLabel?.isHidden = false
         color2.titleLabel?.isHidden = true
     }
+    
     @IBAction func color2Select(_ sender: Any) {
         color2.titleLabel?.isHidden = false
         color1.titleLabel?.isHidden = true
@@ -113,18 +126,11 @@ class DetailViewController: UIViewController {
                 self.compacity = phone.capacity ?? ["nil"]
                 self.color = phone.color ?? ["nil"]
                 self.pictire = phone.images ?? ["nil"]
+                StorageManager.shared.saveImage(self.pictire)
                 
                 DispatchQueue.main.async {
                     
-//                    let capacities = ["black", "white"];
-//
-//                    for capacity in capacities{
-//                    
-//                      print(capacity) // 128 gb, 138 gb
-//                        
-//                        contt button = new Button();
-//                        button.backgroundRefresh;
-//                    }
+                    self.detailCollectionView.reloadData()
                     
                     self.capacity1.setTitle("\(self.compacity[0]) GB", for: .normal)
                     self.capacity2.setTitle("\(self.compacity[1]) GB", for: .normal)
@@ -143,7 +149,11 @@ class DetailViewController: UIViewController {
                     
                     self.raiting(starRaitingCount: phone.rating ?? 0)
                     
-                    self.addToBusketButton.titleLabel?.text = ("Add to Cart $ \(phone.price ?? 0)")
+                    self.color2.titleLabel?.isHidden = true
+                
+                    self.addToBusketButton.setTitle(("Add to Cart\t\t$ \(phone.price ?? 0)"), for: .normal)
+                    self.addToBusketButton.titleLabel?.font = UIFont.init(name: "MarkPro-Bold", size: 17)
+                    
                 }
             }
             catch let error{
