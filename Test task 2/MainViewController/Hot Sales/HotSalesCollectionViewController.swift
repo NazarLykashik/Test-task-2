@@ -49,7 +49,7 @@ class HotSalesCollectionView: UICollectionView, UICollectionViewDelegate, UIColl
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 355, height: 180)
+        return CGSize(width: UIScreen.main.bounds.width - 20 , height: 180)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
