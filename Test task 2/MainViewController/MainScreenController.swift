@@ -107,7 +107,7 @@ class MainScreenViewController: UIViewController, UIGestureRecognizerDelegate {
         BestSellersCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
         BestSellersCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         BestSellersCollectionView.topAnchor.constraint(equalTo: LabelOfBestSellers.bottomAnchor, constant: 5).isActive = true
-        BestSellersCollectionView.heightAnchor.constraint(equalToConstant: 470).isActive = true
+        BestSellersCollectionView.heightAnchor.constraint(equalToConstant: (UIScreen.main.bounds.width) * 2 + 15.5 ).isActive = true
         
         view.addSubview(foter)
         view.addSubview(filter)

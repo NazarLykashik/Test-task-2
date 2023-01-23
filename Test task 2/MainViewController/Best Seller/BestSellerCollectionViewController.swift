@@ -46,7 +46,7 @@ class BestSellerCollectionViewController: UICollectionView, UIColorPickerViewCon
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 172, height: 222)
+        return CGSize(width: (UIScreen.main.bounds.width) / 2 - 15.5 , height: ((UIScreen.main.bounds.width) / 2 - 15.5) * 1.3)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
  
