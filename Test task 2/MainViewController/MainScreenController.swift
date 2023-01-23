@@ -96,22 +96,22 @@ class MainScreenViewController: UIViewController, UIGestureRecognizerDelegate {
             self.openProductDetails()
         }
             
-            HotSalesColectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
-            HotSalesColectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-            
-            HotSalesColectionView.topAnchor.constraint(equalTo: LabelOfHotSales.bottomAnchor, constant: 5).isActive = true
-            HotSalesColectionView.heightAnchor.constraint(equalToConstant: 180).isActive = true
-            
-            view.addSubview(BestSellersCollectionView)
-            
-            BestSellersCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
-            BestSellersCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-            BestSellersCollectionView.topAnchor.constraint(equalTo: LabelOfBestSellers.bottomAnchor, constant: 5).isActive = true
-            BestSellersCollectionView.heightAnchor.constraint(equalToConstant: 470).isActive = true
-            
-            view.addSubview(foter)
-            view.addSubview(filter)
-            
+        HotSalesColectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
+        HotSalesColectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        
+        HotSalesColectionView.topAnchor.constraint(equalTo: LabelOfHotSales.bottomAnchor, constant: 5).isActive = true
+        HotSalesColectionView.heightAnchor.constraint(equalToConstant: 180).isActive = true
+        
+        view.addSubview(BestSellersCollectionView)
+        
+        BestSellersCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
+        BestSellersCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        BestSellersCollectionView.topAnchor.constraint(equalTo: LabelOfBestSellers.bottomAnchor, constant: 5).isActive = true
+        BestSellersCollectionView.heightAnchor.constraint(equalToConstant: 470).isActive = true
+        
+        view.addSubview(foter)
+        view.addSubview(filter)
+        
             
             
         }
